@@ -1,4 +1,4 @@
 param (
-    [string]$PowerShellParam = "http://defaultserver",
+    [string]$PowerShellParam = "value",
 )
-Write-Host $(get-Date -uformat %W)
+Write-Host "Current week number: $(get-Date -uformat %W)"
