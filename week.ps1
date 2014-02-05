@@ -1,4 +1,4 @@
 param (
-    [string]$PowerShellParam = "http://defaultserver",
+    [string]$PowerShellParam = "http://defaultserver"
 )
 Write-Output get-Date -uformat %W
