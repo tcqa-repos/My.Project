@@ -4,14 +4,14 @@ $text = 'Hello World'
 
 $text | Set-Content 'file.txt'
 #or
-$text | Out-File 'file2.txt'
+#$text | Out-File 'file2.txt'
 #or
-$text > 'file3.txt'
+#$text > 'file3.txt'
 
 # Append to file:
 
-$text | Add-Content 'file.txt'
+#$text | Add-Content 'file.txt'
 #or
-$text | Out-File 'file2.txt' -Append
+$text | Out-File 'file.txt' -Append
 #or
-$text >> 'file3.txt'
+$text >> 'file.txt'
