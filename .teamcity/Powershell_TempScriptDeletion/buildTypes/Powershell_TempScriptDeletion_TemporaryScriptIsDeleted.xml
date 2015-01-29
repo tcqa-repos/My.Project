@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="f79330d2-388b-49b7-aa73-a7257a3c24f3" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Temporary script is deleted</name>
+  <settings>
+    <options>
+      <option name="checkoutMode" value="ON_AGENT" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_187" name="Source Code &amp; &quot;-Command&quot;" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="STDIN" />
+          <param name="jetbrains_powershell_script_code" value="Write-Output &quot;Hello, world!&quot;" />
+          <param name="jetbrains_powershell_script_file" value="week.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_188" name="Check that script was deleted" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[if exist "%system.teamcity.build.tempDir%\powershell*.ps1" (
+    echo File exists
+    del "%system.teamcity.build.tempDir%\powershell*.ps1"
+    echo ##teamcity[buildProblem description='PowerShell script was not deleted from temp directory']
+    exit 1
+) else (
+    echo File is deleted
+    echo %system.teamcity.build.tempDir%\powershell*.ps1
+    exit 0
+)]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_189" name="Source Code &amp; &quot;-File&quot;" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_script_code" value="Write-Output &quot;Hello, world!&quot;" />
+          <param name="jetbrains_powershell_script_file" value="week.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_190" name="Check that script was deleted (1)" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[if exist "%system.teamcity.build.tempDir%\powershell*.ps1" (
+    echo File exists
+    del "%system.teamcity.build.tempDir%\powershell*.ps1"
+    echo ##teamcity[buildProblem description='PowerShell script was not deleted from temp directory']
+    exit 1
+) else (
+    echo File is deleted
+    echo %system.teamcity.build.tempDir%\powershell*.ps1
+    exit 0
+)]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Powershell_PowerShell" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</template>
+

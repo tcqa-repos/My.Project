@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="7024f724-0ba1-4144-a9f2-d53746c90ee7" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>PowerShell 4.0</name>
+  <description />
+  <settings ref="Powershell_BuildStepFailure_NonTerminatingErrors_RedirectOutputToStderr_FileWith">
+    <parameters />
+    <build-runners order="RUNNER_30, RUNNER_31" />
+    <vcs-settings />
+    <requirements>
+      <equals name="powershell_x86" value="4.0" />
+    </requirements>
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

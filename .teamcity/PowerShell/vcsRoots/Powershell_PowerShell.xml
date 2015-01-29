@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="fddf3053-36e4-49d2-b56f-f3c441ed4366" type="svn" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>PowerShell</name>
+  <param name="externals-mode" value="externals-none" />
+  <param name="labelingMessage" value="Labeled automatically by TeamCity" />
+  <param name="labelingPatterns" value="trunk=&gt;tags" />
+  <param name="secure:svn-password" value="zxx0378bf4d45c6fa14" />
+  <param name="svn-config-directory" value="C:\Users\Julia.Reshetnikova\AppData\Roaming\Subversion" />
+  <param name="svn-use-default-config-directory" value="true" />
+  <param name="url" value="https://tcqa-winsrv2012.labs.intellij.net/svn/PowerShell/trunk/" />
+  <param name="user" value="jetbrains" />
+  <param name="working-copy-format" value="1.7" />
+</vcs-root>
+

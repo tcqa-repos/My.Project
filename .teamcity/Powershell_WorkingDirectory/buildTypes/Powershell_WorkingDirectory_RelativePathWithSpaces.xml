@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="4d0e6f33-4cd6-4318-9141-9f3c42d6cea5" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Relative path with spaces</name>
+  <description />
+  <settings ref="Powershell_WorkingDirectory_CheckFileWasCreatedInSpecifiedWorkingDirectory">
+    <parameters>
+      <param name="path" value="test powershell" />
+    </parameters>
+    <build-runners order="RUNNER_10, RUNNER_11" />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="96f572a7-a823-4233-baf5-9f689ffb1287" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>PowerShell 2.0</name>
+  <description />
+  <settings ref="Powershell_BuildStepFailure_RedirectOutputToStderr_SourceCodeWithNotFoundCmdlet">
+    <parameters />
+    <build-runners order="RUNNER_22, RUNNER_24" />
+    <vcs-settings />
+    <requirements>
+      <equals name="powershell_x86" value="2.0" />
+    </requirements>
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

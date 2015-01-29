@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="da70d45d-5cd7-4f7c-8f37-e56fa618e026" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Version 1.0</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_462" name="External file" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x64" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_minVersion" value="1.0" />
+          <param name="jetbrains_powershell_script_file" value="host.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_463" name="External file with arguments" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x64" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_minVersion" value="1.0" />
+          <param name="jetbrains_powershell_scriptArguments" value="arg1 arg2 arg3" />
+          <param name="jetbrains_powershell_script_file" value="host.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_126" name="Source code" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x64" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_minVersion" value="1.0" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[$PSVersionTable
+If ([System.IntPtr]::Size -eq 4) { "32-bit" } ElseIf ([System.IntPtr]::Size -eq 8) { "64-bit" } Else {"smth wrong"}]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Powershell_PowerShell" />
+    </vcs-settings>
+    <requirements>
+      <contains name="teamcity.agent.jvm.os.arch" value="86" />
+    </requirements>
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_57" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="(powershell.exe|Arguments).{1,5}-Version\,? 1\.0" />
+          <param name="buildFailureOnMessage.outputText" value="version 1.0 was not specified when launching powershell" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_69" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="(powershell\.exe -Version 1\.0 .* arg1 arg2 arg3)|(Arguments.{3,5}-Version\, 1\.0)" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_78" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="contains" />
+          <param name="buildFailureOnMessage.messagePattern" value="32-bit" />
+          <param name="buildFailureOnMessage.outputText" value="failed to launch 64-bit PowerShell" />
+          <param name="buildFailureOnMessage.reverse" value="false" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

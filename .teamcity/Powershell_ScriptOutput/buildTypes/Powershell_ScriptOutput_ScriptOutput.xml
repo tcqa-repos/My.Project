@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="0004d90f-74df-465c-affe-ed66ebc83cce" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Script Output</name>
+  <settings>
+    <options>
+      <option name="shouldFailBuildOnAnyErrorMessage" value="true" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_171" name="Source Code &amp; &quot;-Command-&quot;" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="STDIN" />
+          <param name="jetbrains_powershell_script_code" value="Write-Output &quot;Write-Output output from Source and Command&quot;" />
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="execute_if_failed" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_172" name="Source Code &amp; &quot;-File&quot;" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_script_code" value="Write-Output &quot;Write-Output output from Source and File&quot;" />
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="execute_if_failed" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_173" name="File &amp; &quot;-Command-&quot;" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="STDIN" />
+          <param name="jetbrains_powershell_script_code" value="Write-Output &quot;Write-Output out from Source and File&quot;" />
+          <param name="jetbrains_powershell_script_file" value="output_command.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="execute_if_failed" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_174" name="File &amp; &quot;-File&quot;" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_script_code" value="Write-Output &quot;Write-Output out from Source and File&quot;" />
+          <param name="jetbrains_powershell_script_file" value="output_file.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="execute_if_failed" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_139" name="Week Script" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="STDIN" />
+          <param name="jetbrains_powershell_script_file" value="week.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_199" name="Week script executed as external file" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_script_file" value="week.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Powershell_PowerShell" />
+    </vcs-settings>
+    <requirements>
+      <any name="powershell_x86" />
+    </requirements>
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_35" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^Write-Output output from Source and Command$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_36" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^Write-Output output from Source and File$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_37" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^Write-Output output with Command option$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_38" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^Write-Output output with File option$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_27" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^Current week number \(out\)" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</template>
+

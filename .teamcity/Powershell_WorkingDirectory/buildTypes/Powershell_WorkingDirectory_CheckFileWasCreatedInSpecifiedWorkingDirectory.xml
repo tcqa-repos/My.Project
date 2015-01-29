@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="ec8035c2-b5cd-4dc0-a108-ed52b9941990" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Check file was created in specified working directory</name>
+  <settings>
+    <options>
+      <option name="checkoutMode" value="ON_AGENT" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_10" name="Create file in working directory via PowerShell script" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_script_file" value="write_to_file.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.build.workingDir" value="%path%" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_11" name="Check file was created where expected" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[if exist "%path%\%file%" (
+    echo File found
+    rmdir "%path%" /s /q
+    echo Directory deleted
+) else (
+    echo File is missing in %path%
+    echo ##teamcity[buildProblem description='Output file is not found where expected']
+    exit 1
+)]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Powershell_PowerShell" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</template>
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="c204fa17-b16c-403c-92fb-3694c0019d49" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>PowerShell 3.0</name>
+  <description />
+  <settings ref="Powershell_ScriptOutput_ScriptOutput">
+    <parameters />
+    <build-runners order="RUNNER_171, RUNNER_172, RUNNER_173, RUNNER_174, RUNNER_139, RUNNER_199" />
+    <vcs-settings />
+    <requirements>
+      <equals name="powershell_x86" value="3.0" />
+    </requirements>
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="1fc88391-fa96-4abd-867b-e3ddd7914542" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Temporary script is deleted on agent with spaces in path</name>
+  <description />
+  <settings ref="Powershell_TempScriptDeletion_TemporaryScriptIsDeleted">
+    <parameters />
+    <build-runners order="RUNNER_187, RUNNER_188, RUNNER_189, RUNNER_190" />
+    <vcs-settings />
+    <requirements>
+      <contains name="system.agent.name" value="spaces" />
+    </requirements>
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

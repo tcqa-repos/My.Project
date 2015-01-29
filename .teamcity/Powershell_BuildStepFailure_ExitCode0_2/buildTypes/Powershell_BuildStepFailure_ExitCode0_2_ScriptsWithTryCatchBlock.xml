@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="8affacd1-a4c5-4d20-9ec1-f29ec14b3efa" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Scripts with try catch block</name>
+  <settings>
+    <options>
+      <option name="shouldFailBuildIfTestsFailed" value="false" />
+      <option name="shouldFailBuildOnBadExitCode" value="false" />
+    </options>
+    <disabled-settings>
+      <setting-ref ref="swabra" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_150" name="Source script with try catch block" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[try {
+    abracadabra
+} catch {
+    Write-Output "Error caught"
+    Exit 6
+}]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="execute_if_failed" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Powershell_PowerShell" />
+    </vcs-settings>
+    <requirements>
+      <equals name="powershell_x86" value="" />
+    </requirements>
+    <build-triggers />
+    <build-extensions>
+      <extension id="swabra" type="swabra">
+        <parameters>
+          <param name="swabra.enabled" value="swabra.before.build" />
+          <param name="swabra.strict" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_70" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="contains" />
+          <param name="buildFailureOnMessage.messagePattern" value="Process exited with code 0" />
+          <param name="buildFailureOnMessage.outputText" value="step wasn't failed" />
+          <param name="buildFailureOnMessage.reverse" value="false" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</template>
+

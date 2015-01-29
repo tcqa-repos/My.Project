@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="dd88193c-c26d-4822-babc-199229d16377" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Arguments</name>
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_55" name="One argument with space" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_scriptArguments" value="&quot;one test-message&quot;" />
+          <param name="jetbrains_powershell_script_file" value="argument.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_74" name="Two arguments separated by space" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_scriptArguments" value="two test-messages" />
+          <param name="jetbrains_powershell_script_file" value="argument.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_4" name="Three arguments separated by new line" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_scriptArguments"><![CDATA[three 
+test
+messages]]></param>
+          <param name="jetbrains_powershell_script_file" value="argument.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_7" name="Argument with dot" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_scriptArguments" value="&quot;arg with.dot&quot; 8.1" />
+          <param name="jetbrains_powershell_script_file" value="argument.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_66" name="With special symbols" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_scriptArguments"><![CDATA["^pattern1$"
+^pattern2$]]></param>
+          <param name="jetbrains_powershell_script_file" value="argument.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_69" name="With quotes" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_scriptArguments"><![CDATA["some line with ^"quotes^" inside"
+"anotherline with "quotes" inside"]]></param>
+          <param name="jetbrains_powershell_script_file" value="argument.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_146" name="One slash at the end" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_scriptArguments"><![CDATA[slash\
+"a line with one slash \"
+"another line with one slash \"]]></param>
+          <param name="jetbrains_powershell_script_file" value="argument.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_147" name="Two slashes at the end" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_scriptArguments"><![CDATA[slashes\\
+"a line with two slashes \\"
+"a line with two escaped slashes ^\^\"]]></param>
+          <param name="jetbrains_powershell_script_file" value="argument.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_480" name="Two slashes at the end (1)" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_scriptArguments"><![CDATA[slash\
+"a line with one escaped slash ^\"
+"a line with one slash \"]]></param>
+          <param name="jetbrains_powershell_script_code"><![CDATA["First argument: $($args[0])"
+"Second argument: $($args[1])"
+"Third argument: $($args[2])"]]></param>
+          <param name="jetbrains_powershell_script_file" value="argument.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Powershell_HttpsGithubComJuliaReshMyProjectGit" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_4" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^one test-message$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_9" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^two$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_39" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^test-messages$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_40" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^three$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_41" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^test$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_51" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^messages$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_52" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^arg with\.dot$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_10" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^\^pattern1\$$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_42" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^\^pattern2\$$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</template>
+

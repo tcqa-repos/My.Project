@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="5f25f228-1fc8-4356-baac-167fab7160aa" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Checked out script is launched with arguments</name>
+  <description />
+  <settings>
+    <parameters>
+      <param name="file_name" value="filename with spaces.ps1" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_194" name="File &amp; &quot;-File&quot;" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_scriptArguments"><![CDATA[param1
+param2 param3]]></param>
+          <param name="jetbrains_powershell_script_code" value="Write-Output &quot;Hello, world!&quot;" />
+          <param name="jetbrains_powershell_script_file" value="%file_name%" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="execute_if_failed" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_195" name="Check that script was deleted" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[if exist "%teamcity.build.checkoutDir%\%file_name%" (
+    echo File exists
+    exit 0
+) else (
+    echo File is deleted
+    echo %teamcity.build.checkoutDir%\%file_name%
+    echo ##teamcity[buildProblem description='PowerShell script was deleted from checkout directory']
+    exit 1
+)]]></param>
+          <param name="teamcity.step.mode" value="execute_if_failed" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Powershell_PowerShell" />
+    </vcs-settings>
+    <requirements>
+      <ver-more-than name="powershell_x86" value="1.0" />
+    </requirements>
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

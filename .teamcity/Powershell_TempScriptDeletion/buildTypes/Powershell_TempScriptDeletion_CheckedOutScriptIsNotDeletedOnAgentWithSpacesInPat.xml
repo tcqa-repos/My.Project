@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="5325881c-cfbf-4c80-aea0-2b5f1049fa64" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Checked out script is not deleted on agent with spaces in path</name>
+  <description />
+  <settings ref="Powershell_TempScriptDeletion_CheckedOutScriptIsNotDeleted_2">
+    <options>
+      <option name="checkoutDirectory" value="\folder with spaces" />
+    </options>
+    <parameters>
+      <param name="file_name" value="folder with spaces\week.ps1" />
+    </parameters>
+    <build-runners order="RUNNER_192, RUNNER_193, RUNNER_194, RUNNER_195" />
+    <vcs-settings />
+    <requirements>
+      <contains name="system.agent.name" value="spaces" />
+    </requirements>
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

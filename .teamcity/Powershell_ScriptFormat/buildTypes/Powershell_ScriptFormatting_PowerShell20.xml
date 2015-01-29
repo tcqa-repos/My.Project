@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="e851e205-63d8-4f59-bba2-2e2553dd3b07" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>PowerShell 2.0</name>
+  <description />
+  <settings ref="Powershell_ScriptFormatting_ScriptOutput">
+    <parameters />
+    <build-runners order="RUNNER_196, RUNNER_3, RUNNER_35" />
+    <vcs-settings />
+    <requirements>
+      <equals name="powershell_x86" value="2.0" />
+    </requirements>
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+
