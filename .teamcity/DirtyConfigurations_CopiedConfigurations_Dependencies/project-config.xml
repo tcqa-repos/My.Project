@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="DirtyConfigurations_CopiedConfigurations" uuid="7a159456-4387-40da-8f21-5a6460c62d45" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Dependencies</name>
+  <parameters />
+  <cleanup />
+</project>
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="ea31f317-8205-4a43-83f7-92f264b75e12" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>"Clean" Configurations</name>
+  <description>use for pending fixes and regression</description>
+  <parameters />
+  <cleanup />
+</project>
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="DirtyConfigurations_CopiedConfigurations_4" uuid="38da1881-4948-43aa-8e27-15c6b1e693b1" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>TestBranches</name>
+  <parameters />
+  <cleanup />
+</project>
+

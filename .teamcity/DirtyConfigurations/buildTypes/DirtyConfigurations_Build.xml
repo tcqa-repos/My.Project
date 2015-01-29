@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="f31b817a-3b2a-41b7-bdd8-eec80dd49167" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Build</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_67" name="" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[$secpasswd = ConvertTo-SecureString "123" -AsPlainText -Force
+$mycreds = New-Object System.Management.Automation.PSCredential ("julia", $secpasswd)
+
+$postParams = "http://google.com"
+$url = "http://localhost:9001/httpAuth/app/rest/vcs-roots/DirtyConfigurations_DummyRoot/properties/url"
+$xml = Invoke-RestMethod -Uri $url -Method Put -Credential $mycreds -Body $postParams
+Write-Output $xml]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers>
+      <build-trigger id="TRIGGER_86" type="schedulingTrigger">
+        <parameters>
+          <param name="cronExpression_dm" value="*" />
+          <param name="cronExpression_dw" value="?" />
+          <param name="cronExpression_hour" value="*" />
+          <param name="cronExpression_min" value="0" />
+          <param name="cronExpression_month" value="*" />
+          <param name="cronExpression_sec" value="0" />
+          <param name="cronExpression_year" value="*" />
+          <param name="dayOfWeek" value="Sunday" />
+          <param name="hour" value="12" />
+          <param name="minute" value="0" />
+          <param name="schedulingPolicy" value="daily" />
+          <param name="timezone" value="SERVER" />
+          <param name="triggerBuildWithPendingChangesOnly" value="true" />
+          <param name="triggerRules" value="123" />
+        </parameters>
+      </build-trigger>
+      <build-trigger id="vcsTrigger" type="vcsTrigger">
+        <parameters>
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+          <param name="triggerRules" value="123" />
+        </parameters>
+      </build-trigger>
+      <build-trigger id="retryBuildTrigger" type="retryBuildTrigger">
+        <parameters>
+          <param name="enqueueTimeout" value="0" />
+          <param name="retryAttempts" value="3" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <cleanup />
+  </settings>
+</build-type>
+

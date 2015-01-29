@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="8e8c9e42-f58a-4fff-89cf-a21835878fdd" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Calculator</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_320" name="" type="JPS">
+        <parameters>
+          <param name="iprInfoRunParam"><![CDATA[<iprInfo path-to-ipr="" should-load-iml="true">
+  <Jdk name="1.7" path-to-library="%env.JDK_17%" is-used="true" type="JavaSDK" path-to-jdk="%env.JDK_17%">
+    <Pattern value="jre/lib/*.jar" />
+    <ExternalAnnotationPattern value="%teamcity.tool.idea%/lib/jdkAnnotations.jar" />
+  </Jdk>
+</iprInfo>]]></param>
+          <param name="jvmArgs" value="-Xmx256m" />
+          <param name="runConfigurations"><![CDATA[Tests
+Tests2
+Tests with spaces]]></param>
+          <param name="target.jdk.home" value="%env.JDK_16%" />
+          <param name="teamcity.coverage.idea.includePatterns" value="pack.*" />
+          <param name="teamcity.coverage.runner" value="IDEA" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_321" name="" type="Inspection">
+        <parameters>
+          <param name="iprInfoRunParam"><![CDATA[<iprInfo path-to-ipr="" should-load-iml="true">
+  <Jdk name="1.7" path-to-library="%env.JDK_17%" is-used="true" type="JavaSDK" path-to-jdk="%env.JDK_17%">
+    <Pattern value="jre/lib/*.jar" />
+    <ExternalAnnotationPattern value="%teamcity.tool.idea%/lib/jdkAnnotations.jar" />
+  </Jdk>
+</iprInfo>]]></param>
+          <param name="jvmArgs" value="-Xmx512m -XX:MaxPermSize=150m" />
+          <param name="target.jdk.home" value="%env.JDK_16%" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="DirtyConfigurations_CopiedConfigurations11_FeatureBranches_HttpsGithubComJuliaRe" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

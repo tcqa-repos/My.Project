@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="DirtyConfigurations_CopiedConfigurations_4_FeatureBranches" uuid="91e51e2c-5df8-4629-965e-88b4b3230d54" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Notifications</name>
+  <description>TW-25487</description>
+  <parameters />
+  <cleanup />
+</project>
+

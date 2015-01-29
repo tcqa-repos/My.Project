@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="aa84d79b-b87c-4dd5-97b0-20b8d3df2bd1" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>BuildA</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="**\* =&gt; artifacts.zip" />
+      <option name="buildNumberPattern" value="1.0.%build.counter%" />
+    </options>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_204" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_204" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[ping 1.1.1.1
+exit 0]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_205" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="sleep 60" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="CopiedConfigurations_Dependencies_LibTestsMaster_HttpsGithubComJuliaReshMyProjec" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="swabra" type="swabra">
+        <parameters>
+          <param name="swabra.enabled" value="swabra.before.build" />
+          <param name="swabra.processes" value="kill" />
+          <param name="swabra.strict" value="true" />
+          <param name="swabra.verbose" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

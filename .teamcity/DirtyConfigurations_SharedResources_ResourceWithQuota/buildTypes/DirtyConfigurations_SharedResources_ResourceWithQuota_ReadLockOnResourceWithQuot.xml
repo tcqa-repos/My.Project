@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="d5d2db22-2ce9-41d7-8492-64dc86ca959c" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Read Lock on Resource with Quota</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_434" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[ping 1.1.1.1 -w 10000
+sleep 40
+exit 0]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_58" type="JetBrains.SharedResources">
+        <parameters>
+          <param name="locks-param"><![CDATA[Resource_with_quota readLock 
+Test_Resource5 readLock]]></param>
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

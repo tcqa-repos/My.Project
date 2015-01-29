@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="54fcdf4f-6d4b-406a-a19b-8b3f270701b8" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>TW-31567 Broken powershell execution</name>
+  <description />
+  <settings>
+    <parameters>
+      <param name="AssemblyInfoFileName" value="%system.teamcity.build.checkoutDir%\file.txt" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_268" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[echo 123 >> file.txt.orig
+echo 123 >> file.txt]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_269" name="" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_minVersion" value="3.0" />
+          <param name="jetbrains_powershell_noprofile" value="true" />
+          <param name="jetbrains_powershell_scriptArguments" value="-revision &quot;c6ac0ad4b6a3&quot; -AssemblyInfoFileName &quot;%AssemblyInfoFileName%&quot;" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[Write-Host "Original"
+
+Get-Content %AssemblyInfoFileName%.orig
+
+Write-Host "Modified"
+
+Get-Content %AssemblyInfoFileName%
+Copy-Item %AssemblyInfoFileName%.orig %AssemblyInfoFileName%
+Remove-Item %AssemblyInfoFileName%.orig]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="DirtyConfigurations_CopiedConfigurations" uuid="5dcb3e89-f6ed-440f-bb7e-64743f9a5fb7" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>PowerShell Remoting</name>
+  <description>TW-23800 (TBD)</description>
+  <parameters />
+  <cleanup />
+</project>
+

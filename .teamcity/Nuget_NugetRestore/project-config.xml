@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="Nuget" uuid="cd15bd01-f228-4571-8255-6d78998e9370" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Nuget Restore</name>
+  <parameters />
+  <cleanup />
+</project>
+

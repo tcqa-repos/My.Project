@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="CleanConfigurations_IssueTrackersIntegration" uuid="76670523-15b2-483e-8cb5-8fe6d6f9c3c9" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>TFS</name>
+  <parameters />
+  <cleanup />
+</project>
+

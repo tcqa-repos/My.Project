@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="DirtyConfigurations_CopiedConfigurations1_AnyProjectCanBeAccessedViewedFromWithi" uuid="9116093c-25f7-4a02-9739-30b67b1e46d0" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>ProjectA</name>
+  <description>With the script</description>
+  <parameters />
+  <cleanup />
+</project>
+

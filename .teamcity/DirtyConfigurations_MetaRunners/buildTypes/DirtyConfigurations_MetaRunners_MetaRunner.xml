@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="e122e272-8adb-4db8-ac8f-ec6868e25bdf" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>MetaRunner</name>
+  <description>Configuration exported as metarunner</description>
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_515" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[ping 1.1.1.1
+exit 0]]></param>
+          <param name="teamcity.step.mode" value="execute_always" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_516" name="New build step" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[ping 1.1.1.1
+exit 0]]></param>
+          <param name="teamcity.step.mode" value="execute_always" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

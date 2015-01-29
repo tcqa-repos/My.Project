@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="3f8218c2-0172-41ad-90e5-f73656d9607b" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Build_nothingfound</name>
+  <description />
+  <settings>
+    <disabled-settings>
+      <setting-ref ref="swabra" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_135" name="" type="VS.Solution">
+        <parameters>
+          <param name="build-file-path" value="DotNetSampleProject.sln" />
+          <param name="msbuild.prop.Configuration" value="Debug" />
+          <param name="msbuild_version" value="12.0" />
+          <param name="run-platform" value="x86" />
+          <param name="targets" value="Rebuild" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="toolsVersion" value="12.0" />
+          <param name="vs.version" value="vs2013" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_136" name="" type="VSTest">
+        <parameters>
+          <param name="dotNetCoverage.NCover.HTMLReport.File.Sort" value="0" />
+          <param name="dotNetCoverage.NCover.HTMLReport.File.Type" value="1" />
+          <param name="dotNetCoverage.NCover.Reg" value="selected" />
+          <param name="dotNetCoverage.NCover.platformBitness" value="x86" />
+          <param name="dotNetCoverage.NCover.platformVersion" value="v2.0" />
+          <param name="dotNetCoverage.NCover3.Reg" value="selected" />
+          <param name="dotNetCoverage.NCover3.args" value="//ias .*" />
+          <param name="dotNetCoverage.NCover3.platformBitness" value="x86" />
+          <param name="dotNetCoverage.NCover3.platformVersion" value="v2.0" />
+          <param name="dotNetCoverage.NCover3.reporter.executable.args" value="//or FullCoverageReport:Html:{teamcity.report.path}" />
+          <param name="dotNetCoverage.PartCover.Reg" value="selected" />
+          <param name="dotNetCoverage.PartCover.includes" value="[*]*" />
+          <param name="dotNetCoverage.PartCover.platformBitness" value="x86" />
+          <param name="dotNetCoverage.PartCover.platformVersion" value="v2.0" />
+          <param name="dotNetTestRunner.Type" value="GenericProcess" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="vstest_custom_report_location" value="C:\123" />
+          <param name="vstest_detect_team_city_logger" value="true" />
+          <param name="vstest_file_names" value="abracadabra" />
+          <param name="vstest_framework" value="default" />
+          <param name="vstest_in_isolation" value="true" />
+          <param name="vstest_platform" value="x86" />
+          <param name="vstest_version" value="%system.VSTest.12.0%" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="VSTest_ORybakRepo2" />
+      <vcs-entry-ref root-id="VSTest_HttpsGithubComJuliaReshMyProjectGit" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="swabra" type="swabra">
+        <parameters>
+          <param name="swabra.enabled" value="swabra.after.build" />
+          <param name="swabra.strict" value="true" />
+          <param name="swabra.verbose" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

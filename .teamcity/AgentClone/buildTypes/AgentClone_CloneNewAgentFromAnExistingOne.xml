@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="8f09821f-54b3-4654-be8a-c7122f0599b8" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Clone new agent from an existing one</name>
+  <description />
+  <settings>
+    <parameters>
+      <param name="agent.name" value="" spec="text description='Leave blank to use ComputerName' validationMode='any' label='Agent name' display='normal'" />
+      <param name="target.server" value="" spec="text description='Server the agent will try to connect to' validationMode='not_empty' display='prompt' label='Target server URL'" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_44" name="Check build agent target directory" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<project name="Check Build Agent Target Directory" basedir="." default="check-agent-dir">
+  <target name="check-agent-dir" depends="do-check-agent-dir" if="${agent.dir.exists}">
+    <property name="error.message" value="Agent directory already exists: %agent.dir%"/>
+    <echo message="##teamcity[buildStatus status='ERROR' text='${error.message}']"/>
+    <fail message="${error.message}"/>
+  </target>
+
+  <target name="do-check-agent-dir">
+    <condition property="agent.dir.exists" else="false">
+      <available file="%agent.dir%" type="dir" />
+    </condition>
+  </target>
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_36" name="Fetch build agent from target server" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<project name="Fetch Build Agent" basedir="." default="fetch">
+  <target name="fetch">
+    <get src="%target.server%/update/buildAgent.zip" dest="${basedir}"/>
+  </target>
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_43" name="Unpack buildagent.zip into target directory" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<project name="Unpack Build Agent" basedir="." default="unpack">
+  <target name="unpack">
+    <mkdir dir="%agent.dir%"/>
+    <unzip src="buildAgent.zip" dest="%agent.dir%"/>
+    <delete file="buildAgent.zip" quiet="true"/>
+  </target>
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_45" name="Configure build agent" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<project name="Configure Build Agent" basedir="." default="configure-agent">
+  <target name="configure-agent" depends="check-os,configure-win-agent,configure-non-win-agent,add-agents-dir-property"/>
+
+  <target name="configure-win-agent" if="${os.is.windows}">
+    <exec executable="cmd.exe">
+      <arg value="/c"/>
+      <arg value="%agent.dir%\bin\agent.bat"/>
+      <arg value="configure"/>
+      <arg value="--serverUrl=%target.server%"/>
+      <arg value="--name=%agent.name%"/>
+    </exec>
+  </target>
+
+  <target name="configure-non-win-agent" unless="${os.is.windows}">
+    <exec executable="/bin/sh">
+      <arg value="%agent.dir%/bin/agent.sh"/>
+      <arg value="configure"/>
+      <arg value="--serverUrl=%target.server%"/>
+    </exec>
+  </target>
+
+  <target name="add-agents-dir-property">
+    <loadfile srcfile="%teamcity.agent.home.dir%\conf\buildAgent.properties" property="agents.parent.dir">
+      <filterchain>
+        <linecontains>
+            <contains value="agents.parent.dir"/>
+        </linecontains>
+      </filterchain>
+    </loadfile>
+    <echo file="%agent.dir%\conf\buildagent.properties" append="true">${agents.parent.dir}</echo>
+  </target>
+
+  <target name="check-os">
+    <condition property="os.is.windows" else="false">
+      <os family="windows"/>
+    </condition>
+  </target>
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_49" name="Configure automatic build agent start" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<project name="Start Build Agent" basedir="%agent.dir%\bin" default="start-agent">
+  <target name="start-agent" depends="check-os,start-win-agent"/>
+  <target name="start-win-agent" depends="change_wrapper_conf,install_winservice,start_winservice"/>
+
+  <target name="change_wrapper_conf" if="${os.is.windows}">
+    <replaceregexp file="%agent.dir%\launcher\conf\wrapper.conf"
+                   match="wrapper.ntservice.name=(.*)"
+                   replace="wrapper.ntservice.name=\1%agent.id%"
+                   byline="true"
+    />
+    <replaceregexp file="%agent.dir%\launcher\conf\wrapper.conf"
+                   match="wrapper.ntservice.displayname=(.*)"
+                   replace="wrapper.ntservice.displayname=\1 %agent.id%"
+                   byline="true"
+    />
+    <replaceregexp file="%agent.dir%\launcher\conf\wrapper.conf"
+                   match="wrapper.ntservice.description=(.*) (Service)"
+                   replace="wrapper.ntservice.description=\1 %agent.id% \2"
+                   byline="true"
+    />
+  </target>
+
+  <target name="install_winservice" if="${os.is.windows}">
+    <exec executable="cmd.exe">
+      <arg value="/c"/>
+      <arg value="%agent.dir%\bin\service.install.bat"/>
+    </exec>
+  </target>
+
+  <target name="start_winservice" if="${os.is.windows}">
+    <exec executable="cmd.exe">
+      <arg value="/c"/>
+      <arg value="%agent.dir%\bin\service.start.bat"/>
+    </exec>
+  </target>
+
+  <target name="check-os">
+    <condition property="os.is.windows" else="false">
+      <os family="windows"/>
+    </condition>
+    <condition property="os.is.linux" else="false">
+      <os family="unix"/>
+    </condition>
+    <condition property="os.is.macox" else="false">
+      <os family="mac"/>
+    </condition>
+  </target>
+
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

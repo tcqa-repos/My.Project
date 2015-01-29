@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <project-graphs>
+    <graph title="qaz" defaultFilters="" hideFilters="" seriesTitle="Serie" format="integer">
+      <valueType key="BuildDuration" title="Build Duration (all stages)" sourceBuildTypeId="AgentClone_CloneNewAgentFromAnExistingOne" />
+    </graph>
+  </project-graphs>
+</settings>
+

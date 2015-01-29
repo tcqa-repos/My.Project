@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="d510e712-c0de-425e-9f56-1bea18d4be57" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Alpha version</name>
+  <description />
+  <settings>
+    <options>
+      <option name="checkoutMode" value="ON_AGENT" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_82" name="Unpacking" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[@echo on
+call "%teamcity.build.checkoutDir%\Unpacking.bat" "%teamcity.build.checkoutDir%"]]></param>
+          <param name="teamcity.build.workingDir" value="%teamcity.agent.work.dir%\temp" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_85" name="Check if signed" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[@setlocal enabledelayedexpansion
+@echo on
+call "%teamcity.build.checkoutDir%\SignatureCheck.bat" "%teamcity.build.checkoutDir%"]]></param>
+          <param name="teamcity.build.workingDir" value="%teamcity.agent.work.dir%\temp" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="SignatureVerification_HttpsGithubComJuliaReshMyProjectGit" />
+    </vcs-settings>
+    <requirements>
+      <equals name="system.agent.name" value="UNIT-539" />
+    </requirements>
+    <build-triggers />
+    <artifact-dependencies>
+      <dependency sourceBuildTypeId="SignatureVerification_FetchTeamC" cleanDestination="false">
+        <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
+        <artifact sourcePath="Teamcity.tar.gz!**\* =&gt; %teamcity.agent.work.dir%\temp" />
+      </dependency>
+    </artifact-dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

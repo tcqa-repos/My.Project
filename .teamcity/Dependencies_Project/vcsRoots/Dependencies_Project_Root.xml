@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="644a3fc7-5c78-4a75-b222-344c658a6a40" type="svn" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>root</name>
+  <param name="externals-mode" value="externals-none" />
+  <param name="labelingMessage" value="Labeled automatically by TeamCity" />
+  <param name="labelingPatterns" value="trunk=&gt;tags" />
+  <param name="secure:svn-password" value="zxx4469c7c25073dd9f" />
+  <param name="svn-config-directory" value="C:\Users\Julia.Reshetnikova\AppData\Roaming\Subversion" />
+  <param name="svn-use-default-config-directory" value="true" />
+  <param name="url" value="https://localhost:7443/svn/Calculator/trunk/" />
+  <param name="user" value="Julia" />
+  <param name="working-copy-format" value="1.7" />
+</vcs-root>
+

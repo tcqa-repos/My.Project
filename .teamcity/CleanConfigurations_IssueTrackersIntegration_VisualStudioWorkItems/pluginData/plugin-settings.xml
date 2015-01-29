@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <issueTrackers>
+    <trackerConnection key="visualstudioonline1" type="VisualStudioOnline">
+      <param name="secure:password" value="zxxd4cc3f8b47d70db1bf358d36ac3fdd2c" />
+      <param name="project" value="My Project" />
+      <param name="username" value="JuliaResh" />
+      <param name="host" value="https://juliaresh.visualstudio.com" />
+      <param name="pattern" value="#(\d+)" />
+      <param name="name" value="VSOnline" />
+      <param name="account" value="juliaresh" />
+      <param name="collection" value="DefaultCollection" />
+    </trackerConnection>
+  </issueTrackers>
+</settings>
+

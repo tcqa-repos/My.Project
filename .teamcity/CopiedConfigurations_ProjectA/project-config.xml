@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="CopiedConfigurations" uuid="3caee613-5edd-43ae-a697-6b2df6afe800" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>ProjectA</name>
+  <description>http://tcqa-hajipur:8080/TeamCity/login.html</description>
+  <parameters />
+  <cleanup />
+</project>
+

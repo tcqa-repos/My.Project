@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="f84cad2f-0507-4d9a-8f68-8c84f6446770" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>PowerShell remoting</name>
+  <settings>
+    <options>
+      <option name="shouldFailBuildOnAnyErrorMessage" value="true" />
+    </options>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_293" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_293" name="sqlcmd" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="STDIN" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[$secpasswd = ConvertTo-SecureString "%password%" -AsPlainText -Force
+$mycreds = New-Object System.Management.Automation.PSCredential ("%computername%\jetbrains", $secpasswd)
+Enter-PSSession -ComputerName "%computername%" -Credential $mycreds -Authentication Negotiate 
+& sqlcmd -S unit-539 -d MySql56 -Q "SET NOCOUNT ON"
+Write-Host "exit code: $lastexitcode"
+Exit-PSSession]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_294" name="sqlcmd (1)" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="STDIN" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[$secpasswd = ConvertTo-SecureString "%password%" -AsPlainText -Force
+$mycreds = New-Object System.Management.Automation.PSCredential ("%computername%\jetbrains", $secpasswd)
+$session = New-PSSession -ComputerName "%computername%" -Credential $mycreds -Authentication Negotiate 
+invoke-command -session $session -scriptblock {& sqlcmd -S unit-539 -d MySql56 -Q "SET NOCOUNT ON"}
+invoke-command -session $session -scriptblock {Write-Host "exit code: $lastexitcode"}
+Exit-PSSession]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_295" name="sqlcmd (1) (1)" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="STDIN" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[$secpasswd = ConvertTo-SecureString "%password%" -AsPlainText -Force
+$mycreds = New-Object System.Management.Automation.PSCredential ("%computername%\jetbrains", $secpasswd)
+$session = New-PSSession -ComputerName "%computername%" -Credential $mycreds -Authentication Negotiate 
+$cmd = "& sqlcmd -S unit-539 -d MySql56 -Q `"SET NOCOUNT ON`""
+invoke-command -session $session -scriptblock {cmd.exe /C "$cmd"}
+invoke-command -session $session -scriptblock {Write-Host "exit code: $lastexitcode"}
+Exit-PSSession]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_296" name="sqlcmd (1) (1) (1)" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="STDIN" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[$secpasswd = ConvertTo-SecureString "%password%" -AsPlainText -Force
+$mycreds = New-Object System.Management.Automation.PSCredential ("%computername%\jetbrains", $secpasswd)
+Enter-PSSession -ComputerName "%computername%" -Credential $mycreds -Authentication Negotiate 
+$cmd = "sqlcmd -S unit-539 -d MySql56 -Q `"SET NOCOUNT ON`""
+$output = [string](cmd.exe /C "$cmd");
+    $output = $output.Trim(' ');
+
+    if ($output -eq $latest_output)
+    {
+        Write-Host "Up to date.";
+    }
+    else
+    {
+        Write-Host "Updating...";
+    }Exit-PSSession]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements>
+      <equals name="system.agent.name" value="" />
+    </requirements>
+    <build-triggers />
+    <cleanup />
+  </settings>
+</template>
+

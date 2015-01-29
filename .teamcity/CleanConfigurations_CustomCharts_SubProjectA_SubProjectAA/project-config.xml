@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="CleanConfigurations_CustomCharts_SubProjectA" uuid="97c8deca-a327-4638-bfb3-32ad8a7d5b4f" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>SubProjectAA</name>
+  <parameters />
+  <cleanup />
+</project>
+

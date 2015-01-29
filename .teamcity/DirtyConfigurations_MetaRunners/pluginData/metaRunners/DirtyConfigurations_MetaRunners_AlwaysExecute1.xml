@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta-runner name="Always Execute 1">
+  <description>Configuration exported as metarunner</description>
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[ping 1.1.1.1
+exit 0]]></param>
+          <param name="teamcity.step.mode" value="execute_always" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <requirements />
+  </settings>
+</meta-runner>
+

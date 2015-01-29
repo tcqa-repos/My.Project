@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="fbaf7420-7241-4157-b3f6-cfbf679efc9f" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Projects Config Files Commit &amp; Update</name>
+  <description>use with caution</description>
+  <parameters>
+    <param name="svn_password" value="zxx0378bf4d45c6fa14" spec="password display='normal'" />
+    <param name="svn_user" value="jetbrains" />
+  </parameters>
+  <cleanup />
+</project>
+

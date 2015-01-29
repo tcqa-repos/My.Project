@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="8795ae9e-9550-4b1e-b9aa-34faf0c0cc3b" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>One level up</name>
+  <description>Check nuget.config in sln folder priority over the others</description>
+  <settings>
+    <options>
+      <option name="artifactRules" value="**\* =&gt;" />
+      <option name="cleanBuild" value="true" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_110" name="" type="jb.nuget.installer">
+        <parameters>
+          <param name="nuget.path" value="?NuGet.CommandLine.2.8.0.nupkg" />
+          <param name="nuget.updatePackages.mode" value="sln" />
+          <param name="nuget.use.restore" value="restore" />
+          <param name="nugetCustomPath" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+          <param name="nugetPathSelector" value="?NuGet.CommandLine.2.8.0.nupkg" />
+          <param name="sln.path" value="Folder1/TestLibrary.sln" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Nuget_NugetConfigLocation_NugetSources">
+        <checkout-rule rule="-:Folder1\.nuget" />
+        <checkout-rule rule="-:Folder1\nuget.config" />
+      </vcs-entry-ref>
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="5a40d7ac-f27d-4487-bae7-fad1aa16ad87" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Commit</name>
+  <description>Only .xml files are versioned</description>
+  <settings>
+    <options>
+      <option name="shouldFailBuildOnAnyErrorMessage" value="true" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_100" name="Add all .xml file to version control" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[@echo on
+cd "%teamcity.data.directory%\config\projects"
+FOR /R %%%%f in (*.xml) do svn add %%%%f --parents --force
+exit 0]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_1" name="Delete all missing files from version control" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[@echo on
+cd "%teamcity.data.directory%\config\projects"
+svn status | findstr /R "^!" > missing.list
+for /F "tokens=2 delims= " %%%%A in (missing.list) do svn delete %%%%A --force
+del missing.list
+exit 0]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_2" name="Commit changes" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[@echo on
+cd "%teamcity.data.directory%\config\projects"
+svn commit -m "Committed via TeamCity server %system.teamcity.version% by %teamcity.build.triggeredBy% (%teamcity.build.triggeredBy.username%)" --username %svn_user% --password %svn_password% --non-interactive --trust-server-cert
+exit 0]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_1" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="svn.*[Ff]ailed" />
+          <param name="buildFailureOnMessage.outputText" value="Something failed" />
+          <param name="buildFailureOnMessage.reverse" value="false" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

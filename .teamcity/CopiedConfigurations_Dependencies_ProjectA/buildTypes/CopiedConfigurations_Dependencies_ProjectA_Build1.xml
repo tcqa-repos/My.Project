@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="6edfab64-3ee3-49fd-886c-173289a499a0" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Build1</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="**\* =&gt; %confparam1%.zip" />
+    </options>
+    <parameters>
+      <param name="confparam1" value="%build.number%" />
+    </parameters>
+    <build-runners />
+    <vcs-settings>
+      <vcs-entry-ref root-id="CopiedConfigurations_Dependencies_ProjectA_Root" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

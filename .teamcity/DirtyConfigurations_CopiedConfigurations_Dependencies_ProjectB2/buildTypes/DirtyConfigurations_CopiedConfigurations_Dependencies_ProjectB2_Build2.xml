@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="9e62d65c-77d6-4c9e-8b38-59a3f1f457b5" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Build2</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <artifact-dependencies>
+      <dependency sourceBuildTypeId="DirtyConfigurations_CopiedConfigurations_Dependencies_ProjectA_Build1" cleanDestination="false">
+        <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
+        <artifact sourcePath="%dep.DirtyConfigurations_CopiedConfigurations_Dependencies_ProjectA_Build1.confparam1%.zip =&gt;" />
+      </dependency>
+    </artifact-dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

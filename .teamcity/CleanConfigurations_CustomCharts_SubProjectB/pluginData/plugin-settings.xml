@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <project-graphs>
+    <graph title="New chart" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueType key="BuildB Key" title="BuildB Key" sourceBuildTypeId="CleanConfigurations_CustomCharts_SubProjectB_BuildB" />
+    </graph>
+  </project-graphs>
+</settings>
+

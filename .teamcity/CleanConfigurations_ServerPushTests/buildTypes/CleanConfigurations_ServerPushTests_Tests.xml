@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="b9b7947f-fbfb-406a-9d67-a04739e01100" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Tests</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="**\*=&gt;artifact.7z" />
+    </options>
+    <parameters>
+      <param name="system.password" value="zxx4469c7c25073dd9f" spec="password display='normal'" />
+      <param name="system.server-url" value="http://unit-539:9001" />
+      <param name="system.username" value="julia" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_513" name="" type="JPS">
+        <parameters>
+          <param name="iprInfoRunParam"><![CDATA[<iprInfo path-to-ipr="" should-load-iml="true">
+  <Jdk name="1.7" path-to-library="%env.JDK_17%" is-used="true" type="JavaSDK" path-to-jdk="%env.JDK_17%">
+    <Pattern value="jre/lib/*.jar" />
+    <ExternalAnnotationPattern value="%teamcity.tool.idea%/lib/jdkAnnotations.jar" />
+  </Jdk>
+</iprInfo>]]></param>
+          <param name="runConfigurations" value="ServerPushTests" />
+          <param name="target.jdk.home" value="%env.JDK_17%" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="CleanConfigurations_ServerPushTests_JbWebSockets" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

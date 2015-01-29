@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="DirtyConfigurations_AnyProjectCanBeAccessedViewedFromWithinTheBuild" uuid="e491785e-c5ac-4b4e-bff0-4180f70e2486" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>ProjectB</name>
+  <description>With some artifact</description>
+  <parameters />
+  <cleanup />
+</project>
+

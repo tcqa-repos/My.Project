@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="f60efa8d-9adb-4609-a023-81c47bc2cab6" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Build64_wrong_framework</name>
+  <description />
+  <settings>
+    <disabled-settings>
+      <setting-ref ref="BUILD_EXT_27" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_122" name="" type="VS.Solution">
+        <parameters>
+          <param name="build-file-path" value="DotNetSampleProject.sln" />
+          <param name="msbuild.prop.Configuration" value="Debug" />
+          <param name="msbuild_version" value="12.0" />
+          <param name="run-platform" value="x86" />
+          <param name="targets" value="Rebuild" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="toolsVersion" value="12.0" />
+          <param name="vs.version" value="vs2013" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_134" name="" type="VSTest">
+        <parameters>
+          <param name="dotNetCoverage.NCover.HTMLReport.File.Sort" value="0" />
+          <param name="dotNetCoverage.NCover.HTMLReport.File.Type" value="1" />
+          <param name="dotNetCoverage.NCover.Reg" value="selected" />
+          <param name="dotNetCoverage.NCover.platformBitness" value="x86" />
+          <param name="dotNetCoverage.NCover.platformVersion" value="v2.0" />
+          <param name="dotNetCoverage.NCover3.Reg" value="selected" />
+          <param name="dotNetCoverage.NCover3.args" value="//ias .*" />
+          <param name="dotNetCoverage.NCover3.platformBitness" value="x86" />
+          <param name="dotNetCoverage.NCover3.platformVersion" value="v2.0" />
+          <param name="dotNetCoverage.NCover3.reporter.executable.args" value="//or FullCoverageReport:Html:{teamcity.report.path}" />
+          <param name="dotNetCoverage.PartCover.Reg" value="selected" />
+          <param name="dotNetCoverage.PartCover.includes" value="[*]*" />
+          <param name="dotNetCoverage.PartCover.platformBitness" value="x86" />
+          <param name="dotNetCoverage.PartCover.platformVersion" value="v2.0" />
+          <param name="dotNetTestRunner.Type" value="VSTest" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="vstest_file_names"><![CDATA[**\obj\debug\**\*.dll
+**\obj\debug\**\*.exe]]></param>
+          <param name="vstest_framework" value="Framework45" />
+          <param name="vstest_platform" value="x64" />
+          <param name="vstest_version" value="%system.VSTest.12.0%" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="VSTest_ORybakRepo2" />
+      <vcs-entry-ref root-id="VSTest_HttpsGithubComJuliaReshMyProjectGit" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_27" type="xml-report-plugin">
+        <parameters>
+          <param name="xmlReportParsing.reportDirs" value="+:TestResults22/*.trx" />
+          <param name="xmlReportParsing.reportType" value="mstest" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

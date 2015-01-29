@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <issueTrackers>
+    <trackerConnection key="jira1" type="jira">
+      <param name="secure:password" value="zxx0feb335798e7f083" />
+      <param name="username" value="admin" />
+      <param name="host" value="http://tcqa-issue-trackers:8080/" />
+      <param name="idPrefix" value="JTCI" />
+      <param name="name" value="JIRA" />
+    </trackerConnection>
+  </issueTrackers>
+</settings>
+

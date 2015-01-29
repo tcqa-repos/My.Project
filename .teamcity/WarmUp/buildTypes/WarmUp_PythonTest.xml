@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="8e7e57b7-5aae-42db-a4d1-6ce79876c5e3" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Python test</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="**\* =&gt;" />
+    </options>
+    <parameters>
+      <param name="Log level" value="INFO" spec="select description='Set log level for the python script' data_2='INFO' data_1='DEBUG' label='Log level' display='normal' data_4='ERROR' data_3='WARNING'" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_143" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="%AnyPython% -m unittest Test_BuildServer.py" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="WarmUp_HttpsLocalhost7443svnSeleniumTest">
+        <checkout-rule rule="+:trunk/SeleniumTest =&gt; ." />
+      </vcs-entry-ref>
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

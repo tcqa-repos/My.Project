@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="3b8636e1-bc1b-4a81-82af-cb35f6858f51" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Install 2.8.0</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_60" name="" type="jb.nuget.installer">
+        <parameters>
+          <param name="nuget.path" value="?NuGet.CommandLine.2.8.0.nupkg" />
+          <param name="nuget.updatePackages.mode" value="sln" />
+          <param name="nuget.use.restore" value="install" />
+          <param name="nugetCustomPath" value="?NuGet.CommandLine.1.6.0.nupkg" />
+          <param name="nugetPathSelector" value="?NuGet.CommandLine.2.8.0.nupkg" />
+          <param name="sln.path" value="TestLibrary.sln" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Nuget_NugetFeedAuthentication_HttpsGithubComJuliaReshSlnWithNugetDep" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

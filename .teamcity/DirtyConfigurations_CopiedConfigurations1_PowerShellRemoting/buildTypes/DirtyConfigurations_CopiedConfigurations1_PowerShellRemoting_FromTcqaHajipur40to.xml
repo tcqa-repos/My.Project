@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="6fc5fbb7-cae2-4e79-b556-375fdc8b4c9a" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>From tcqa-hajipur (4.0) to tcqa-win7 (2.0)</name>
+  <description />
+  <settings ref="DirtyConfigurations_CopiedConfigurations1_PowerShellRemoting_PowerShellRemoting">
+    <parameters>
+      <param name="computername" value="tcqa-win7" />
+      <param name="password" value="jb" />
+    </parameters>
+    <build-runners order="RUNNER_259, RUNNER_260, RUNNER_261" />
+    <vcs-settings />
+    <requirements>
+      <equals name="system.agent.name" value="tcqa-trunk" />
+    </requirements>
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

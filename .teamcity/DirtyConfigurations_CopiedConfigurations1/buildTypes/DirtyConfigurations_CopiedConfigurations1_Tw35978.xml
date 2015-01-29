@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="472180f3-b818-4394-b88a-65a128d74b0a" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>TW-35978</name>
+  <description />
+  <settings>
+    <options>
+      <option name="cleanBuild" value="true" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_270" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="cp reports/*.trx ../" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="DirtyConfigurations_CopiedConfigurations1_HttpsGithubComJuliaReshReports">
+        <checkout-rule rule="+:TRX =&gt; /reports/" />
+      </vcs-entry-ref>
+      <vcs-entry-ref root-id="DirtyConfigurations_CopiedConfigurations1_HttpsGithubComJuliaReshMavenHW">
+        <checkout-rule rule="+:lib =&gt; ." />
+      </vcs-entry-ref>
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_46" type="xml-report-plugin">
+        <parameters>
+          <param name="xmlReportParsing.reportDirs" value="+:../*.trx" />
+          <param name="xmlReportParsing.reportType" value="mstest" />
+          <param name="xmlReportParsing.verboseOutput" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

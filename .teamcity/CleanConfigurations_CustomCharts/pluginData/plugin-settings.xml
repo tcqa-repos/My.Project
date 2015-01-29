@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <buildtype-graphs>
+    <graph title="My Chart" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueTypes pattern="Key*" title="Some title {1} qqq" />
+    </graph>
+    <graph title="My Chart 2" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueTypes pattern="Key* and *" title="Title {1} aaaa {3}" />
+    </graph>
+    <graph title="New custom chart" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueType key="Key10" title="Key 10" />
+    </graph>
+    <graph title="Chart title" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueType key="BuildTestStatus" title="BuildTestStatus" />
+      <valueType key="MyAwesomeKey42" title="MyAwesomeKey42" />
+    </graph>
+  </buildtype-graphs>
+  <project-graphs>
+    <graph title="New chart title" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueType key="BuildDuration" title="Build Duration (all stages)" sourceBuildTypeId="CleanConfigurations_CustomCharts_SubProjectA_BuildA" />
+    </graph>
+    <graph title="My Chart" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueType key="BuildDuration" title="Build Duration (all stages)" sourceBuildTypeId="CleanConfigurations_CustomCharts_SubProjectA_BuildA" />
+    </graph>
+    <graph title="My Chart 2" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueTypes pattern="Key* and *" title="Title {1} aaa {2}" sourceBuildTypeId="CleanConfigurations_CustomCharts_ReportCustomStatistics_2" />
+    </graph>
+    <graph title="Chart 22" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueType key="BuildDurationNetTime" title="Build Duration (excluding Checkout Time)" sourceBuildTypeId="CleanConfigurations_CustomCharts_ReportCustomStatistics_3" />
+    </graph>
+    <graph title="Chart 33" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueType key="MyAwesomeKey42" title="MyAwesomeKey42" sourceBuildTypeId="CleanConfigurations_CustomCharts_ReportCustomStatistics_3" />
+    </graph>
+    <graph title="123qwe" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueType key="MyNewAwesomeKey42" title="MyNewAwesomeKey42" sourceBuildTypeId="CleanConfigurations_CustomCharts_ReportCustomStatistics_3" />
+    </graph>
+    <graph title="Test Chart" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueType key="MyNewAwesomeKey42" title="MyNewAwesomeKey42" sourceBuildTypeId="CleanConfigurations_CustomCharts_ReportCustomStatistics_3" />
+    </graph>
+  </project-graphs>
+</settings>
+

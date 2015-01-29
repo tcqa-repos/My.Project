@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <JetBrains.SharedResources>
+    <resource>
+      <name>Resource_with_zero_quota</name>
+      <enabled>false</enabled>
+      <values type="quota">
+        <quota>0</quota>
+      </values>
+    </resource>
+    <resource>
+      <name>Resource_with_values</name>
+      <values type="custom">
+        <value>Value1</value>
+        <value>Value2</value>
+        <value>Value3</value>
+      </values>
+    </resource>
+    <resource>
+      <name>Resource_with_quota</name>
+      <values type="quota">
+        <quota>3</quota>
+      </values>
+    </resource>
+    <resource>
+      <name>Resource_with_Infinite_quota</name>
+      <values type="quota">
+        <quota>infinite</quota>
+      </values>
+    </resource>
+  </JetBrains.SharedResources>
+</settings>
+

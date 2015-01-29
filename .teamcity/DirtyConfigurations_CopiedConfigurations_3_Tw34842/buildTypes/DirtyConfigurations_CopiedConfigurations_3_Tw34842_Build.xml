@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="0911bb91-2740-49c0-a615-dad970684597" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Build</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_395" name="" type="JPS">
+        <parameters>
+          <param name="iprInfoRunParam"><![CDATA[<iprInfo path-to-ipr=".qwerty" should-load-iml="true">
+  <Jdk name="1.7" path-to-library="%env.JDK_17%" is-used="true" type="JavaSDK" path-to-jdk="%env.JDK_17%">
+    <Pattern value="jre/lib/*.jar" />
+    <ExternalAnnotationPattern value="%teamcity.tool.idea%/lib/jdkAnnotations.jar" />
+  </Jdk>
+  <PathVariable name="MAVEN_REPOSITORY" value="%system.path.macro.MAVEN.REPOSITORY%" />
+</iprInfo>]]></param>
+          <param name="jvmArgs" value="-Xmx256m" />
+          <param name="target.jdk.home" value="%env.JDK_16%" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_396" name="" type="Maven2">
+        <parameters>
+          <param name="goals" value="clean test" />
+          <param name="mavenSelection" value="mavenSelection:default" />
+          <param name="pomLocation" value=".qwerty/pom.xml" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="userSettingsSelection" value="userSettingsSelection:default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_397" name="" type="VS.Solution">
+        <parameters>
+          <param name="build-file-path" value="CSharp.sln" />
+          <param name="msbuild.prop.Configuration" value="Release" />
+          <param name="msbuild_version" value="12.0" />
+          <param name="targets" value="Rebuild" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="toolsVersion" value="12.0" />
+          <param name="vs.version" value="vs2013" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="DirtyConfigurations_CopiedConfigurations_3_HttpsUnit5397443svnSvnTrunkNUnitSampl" />
+      <vcs-entry-ref root-id="DirtyConfigurations_CopiedConfigurations_3_HttpsGithubComJuliaReshMavenHW">
+        <checkout-rule rule="=&gt; .qwerty" />
+      </vcs-entry-ref>
+      <vcs-entry-ref root-id="DirtyConfigurations_CopiedConfigurations_3_HttpsGithubComJuliaReshReports">
+        <checkout-rule rule="+:. =&gt; .rep" />
+      </vcs-entry-ref>
+      <vcs-entry-ref root-id="DirtyConfigurations_CopiedConfigurations_3_Tw34842_HttpsGithubComKnightOSKnightO" />
+      <vcs-entry-ref root-id="DirtyConfigurations_CopiedConfigurations_3_DummyRoot" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

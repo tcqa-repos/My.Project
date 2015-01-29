@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="d7028346-5f73-474e-b7b9-f7e82ace120e" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>First draft</name>
+  <description />
+  <settings>
+    <options>
+      <option name="checkoutDirectory" value="D:\Tools\SignTool\qwerty" />
+      <option name="checkoutMode" value="ON_AGENT" />
+    </options>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_75" />
+      <setting-ref ref="RUNNER_76" />
+      <setting-ref ref="RUNNER_77" />
+      <setting-ref ref="RUNNER_80" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_75" name="Unpacking" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[REM this stuff should unpack everything except .exe files
+FOR /D /r %%%%F in ("*") DO (
+    pushd %%CD%%
+    cd %%%%F
+       FOR %%%%X in (*.rar *.zip *.jar *.war) DO (
+            "D:\Tools\SignTool\7za.exe" x -y "%%%%X"
+        )
+    popd
+)]]></param>
+          <param name="teamcity.build.workingDir" value="D:\Tools\SignTool" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_76" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="call try.bat" />
+          <param name="teamcity.build.workingDir" value="D:\Tools\SignTool\" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_77" name="Check if signed" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[@echo on
+D:\Tools\SignTool\try2.bat]]></param>
+          <param name="teamcity.build.workingDir" value="D:\Tools\SignTool" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_80" name="Check if signed (1)" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[@setlocal enabledelayedexpansion
+call "D:\Tools\SignTool\qwerty\try3.bat"]]></param>
+          <param name="teamcity.build.workingDir" value="D:\Tools\SignTool" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_83" name="Check if signed (1) (1)" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[@setlocal enabledelayedexpansion
+call "D:\Tools\SignTool\qwerty\try3.bat"]]></param>
+          <param name="teamcity.build.workingDir" value="D:\Tools\SignTool" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="SignatureVerification_HttpsGithubComJuliaReshMyProjectGit" />
+    </vcs-settings>
+    <requirements>
+      <equals name="system.agent.name" value="UNIT-539" />
+    </requirements>
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

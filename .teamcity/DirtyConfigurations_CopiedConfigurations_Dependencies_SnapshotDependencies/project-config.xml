@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="DirtyConfigurations_CopiedConfigurations_Dependencies" uuid="8ae841f5-20bd-4581-9d1d-431ea1cbbd63" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Snapshot Dependencies</name>
+  <parameters />
+  <cleanup />
+</project>
+

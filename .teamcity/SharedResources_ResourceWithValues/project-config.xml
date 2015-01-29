@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="SharedResources" uuid="a840ce04-eaf9-48d6-85c3-4cf4b42b056a" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Resource with Values</name>
+  <parameters />
+  <cleanup />
+</project>
+

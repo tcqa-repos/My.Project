@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="CopiedConfigurations" uuid="d7ae6a67-1283-40c0-9f07-ce7cc8cb8229" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>TW-25265</name>
+  <parameters />
+  <cleanup />
+</project>
+

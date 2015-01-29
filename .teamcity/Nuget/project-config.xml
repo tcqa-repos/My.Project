@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="CleanConfigurations" uuid="466824b7-d3b0-467f-a9b0-417686cbeed7" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Nuget</name>
+  <description>TBD</description>
+  <parameters />
+  <cleanup />
+</project>
+

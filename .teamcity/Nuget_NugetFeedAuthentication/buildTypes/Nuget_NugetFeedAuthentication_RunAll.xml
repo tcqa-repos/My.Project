@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="0a77d5a7-d75e-4def-9e94-0534c499fcea" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>_Run All_</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <dependencies>
+      <depend-on sourceBuildTypeId="Nuget_NugetFeedAuthentication_Install25">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Nuget_NugetFeedAuthentication_Install27">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Nuget_NugetFeedAuthentication_Install273Update">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Nuget_NugetFeedAuthentication_Install282">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Nuget_NugetFeedAuthentication_Install282Update">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Nuget_NugetFeedAythentication_WithCredentialsOnTeamCityServer">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Nuget_NugetFeedAuthentication_RestoreUpdateViaPackagesConfig">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Nuget_NugetFeedAuthentication_RestoreUpdate">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

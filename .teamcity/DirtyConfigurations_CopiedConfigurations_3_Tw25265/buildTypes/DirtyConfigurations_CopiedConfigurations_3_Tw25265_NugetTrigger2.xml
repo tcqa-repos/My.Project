@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="9356a41f-8fe7-4dfd-b241-c20e24cc17e8" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>nuget trigger</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers>
+      <build-trigger id="TRIGGER_72" type="nuget.simple">
+        <parameters>
+          <param name="nuget.exe" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+          <param name="nuget.package" value="NewLibrary.ClassLibrary5" />
+          <param name="nuget.password" value="123" />
+          <param name="nuget.source" value="%teamcity.nuget.feed.auth.server%" />
+          <param name="nuget.username" value="Julia" />
+          <param name="nugetPathSelector" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <cleanup />
+  </settings>
+</build-type>
+

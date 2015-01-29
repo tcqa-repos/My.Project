@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="86b2cc7a-36e6-4ff2-bfbb-0d8f670465e9" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Build</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_227" name="" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[$secpasswd = ConvertTo-SecureString "123" -AsPlainText -Force
+$mycreds = New-Object System.Management.Automation.PSCredential ("julia", $secpasswd)
+
+$postParams = "http://google.com"
+$url = "http://localhost:9001/httpAuth/app/rest/vcs-roots/DirtyConfigurations_DummyRoot/properties/url"
+$xml = Invoke-RestMethod -Uri $url -Method Put -Credential $mycreds -Body $postParams
+Write-Output $xml]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

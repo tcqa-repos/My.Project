@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="DirtyConfigurations_CopiedConfigurations_3_Dependencies" uuid="e2bd3645-2910-49a1-9bcb-0ce1d00edc10" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Lib-&gt;Tests-&gt;Master</name>
+  <parameters />
+  <cleanup />
+</project>
+

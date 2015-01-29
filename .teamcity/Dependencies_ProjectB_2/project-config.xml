@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="Dependencies" uuid="f2ee52d5-68bb-4ea3-8658-58e948d431a6" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>ProjectB (1)</name>
+  <parameters />
+  <cleanup />
+</project>
+

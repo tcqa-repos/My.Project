@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="737813d9-56cd-4b50-817a-5f637a5c201b" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>FxCopTest</name>
+  <description />
+  <settings>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_263" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_263" name="" type="VS.Solution">
+        <parameters>
+          <param name="build-file-path" value="Pechkin.sln" />
+          <param name="msbuild.prop.Configuration" value="Release" />
+          <param name="msbuild_version" value="4.5" />
+          <param name="targets" value="Rebuild" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="toolsVersion" value="4.0" />
+          <param name="vs.version" value="vs2012" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_264" name="" type="FxCop">
+        <parameters>
+          <param name="fxcop.detection_mode" value="auto" />
+          <param name="fxcop.fail_on_analysis_error" value="true" />
+          <param name="fxcop.files" value="**\*.dll" />
+          <param name="fxcop.search_in_gac" value="true" />
+          <param name="fxcop.version" value="not_specified" />
+          <param name="fxcop.what" value="files" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="DirtyConfigurations_CopiedConfigurations1_HttpsGithubComGmannyPechkinGit" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

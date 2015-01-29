@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="DirtyConfigurations_AnyProjectCanBeAccessedViewedFromWithinTheBuild" uuid="90412ee5-4e08-41cc-8d6f-3bc8cfce0620" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>ProjectD</name>
+  <description>Guest cannot view</description>
+  <parameters />
+  <cleanup />
+</project>
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="CleanConfigurations_IssueTrackersIntegration" uuid="c00b9012-03d5-48ee-8c8f-9115e6c9bd59" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Visual Studio Work Items</name>
+  <parameters />
+  <cleanup />
+</project>
+

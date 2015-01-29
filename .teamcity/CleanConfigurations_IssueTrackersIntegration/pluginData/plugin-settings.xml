@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <issueTrackers>
+    <trackerConnection key="youtrack1" type="youtrack">
+      <param name="secure:password" value="zxx775d03cbe80d301b" />
+      <param name="username" value="" />
+      <param name="host" value="http://youtrack.com" />
+      <param name="idPrefix" value="AA" />
+      <param name="name" value="Display Name" />
+    </trackerConnection>
+    <trackerConnection key="tfsissuetracker1" type="tfsissuetracker">
+      <param name="secure:password" value="zxx775d03cbe80d301b" />
+      <param name="username" value="" />
+      <param name="host" value="http://tcqa-winsrv2012:8080/tfs" />
+      <param name="name" value="TFS" />
+    </trackerConnection>
+    <trackerConnection key="bugzilla1" type="bugzilla">
+      <param name="secure:password" value="zxx775d03cbe80d301b" />
+      <param name="username" value="" />
+      <param name="host" value="http://tcqa-winsrv2012:8080/tfs" />
+      <param name="pattern" value="123" />
+      <param name="name" value="Bugs" />
+    </trackerConnection>
+    <trackerConnection key="bugzilla2" type="bugzilla">
+      <param name="secure:password" value="zxx775d03cbe80d301b" />
+      <param name="username" value="" />
+      <param name="host" value="http://tcqa-winsrv2012:8080/tfs" />
+      <param name="pattern" value="123" />
+      <param name="name" value="Bugs2" />
+    </trackerConnection>
+    <trackerConnection key="githubissues1" type="GithubIssues">
+      <param name="secure:password" value="zxx775d03cbe80d301b" />
+      <param name="username" value="" />
+      <param name="pattern" value="#(\d+)" />
+      <param name="repository" value="https://github.com/JuliaResh/iti" />
+      <param name="name" value="GitHub" />
+    </trackerConnection>
+  </issueTrackers>
+</settings>
+

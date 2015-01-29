@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="a17f7f77-938a-4f0e-a6cd-357275741227" type="tfs" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>http://tcqa-tfs:8080/tfs/DefaultCollection$/TFS_Project</name>
+  <param name="secure:tfs-password" value="zxx6dec63157be4b5e5" />
+  <param name="tfs-root" value="$/TFS_Project" />
+  <param name="tfs-url" value="http://tcqa-tfs:8080/tfs/DefaultCollection" />
+  <param name="tfs-username" value="Jetbrains" />
+</vcs-root>
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="Nuget" uuid="287da3d0-a2db-4fa6-bea9-251c1c4d1abe" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Nuget Install</name>
+  <parameters />
+  <cleanup />
+</project>
+

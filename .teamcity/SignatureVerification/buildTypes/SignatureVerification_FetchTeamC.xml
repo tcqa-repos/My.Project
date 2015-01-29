@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="faedf5cd-0f93-454d-a97e-056522c48f2d" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Fetch TeamCity</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="**/* =&gt;" />
+    </options>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_86" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_86" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="&quot;D:\Tools\curl.exe&quot; -v --basic --user %username%:%password% --request GET http://buildserver.labs.intellij.net/downloadArtifacts.html?buildTypeId=TC_Trunk_BuildDist^&amp;buildId=lastSuccessful" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_87" name="" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="STDIN" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[$BuildTypeId = "TC_Gaya81x_BuildDist"
+$url = "http://buildserver/guestAuth/app/rest/buildTypes/$BuildTypeId/builds/status:SUCCESS/number"
+
+$client = New-Object System.Net.WebCLient
+$buildNum = $client.DownloadString($url)
+
+$destination = "$pwd\TeamCity.tar.gz"
+$source = "http://buildserver/guestAuth/repository/download/$BuildTypeId/$buildNum/TeamCity-$buildNum.tar.gz"
+$client.DownloadFile($source, $destination)]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="SignatureVerification_HttpsGithubComJuliaReshMyProjectGit" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

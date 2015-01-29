@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="4187bf4b-3cb9-43cc-97cc-a022fa6029a1" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Install 1.7.0</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_489" name="" type="jb.nuget.installer">
+        <parameters>
+          <param name="nuget.path" value="qwerty" />
+          <param name="nuget.updatePackages.mode" value="sln" />
+          <param name="nuget.use.restore" value="install" />
+          <param name="nugetCustomPath" value="qwerty" />
+          <param name="nugetPathSelector" value="custom" />
+          <param name="sln.path" value="TestLibrary.sln" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="DirtyConfigurations_HttpsGithubComJuliaReshSlnWithNugetDep" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

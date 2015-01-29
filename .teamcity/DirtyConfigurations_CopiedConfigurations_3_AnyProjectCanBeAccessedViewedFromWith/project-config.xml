@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="DirtyConfigurations_CopiedConfigurations_3" uuid="a3d2038b-7e7a-42dc-a1d3-a93f01fa7740" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Any project can be accessed/viewed from within the build</name>
+  <description>TW-24904</description>
+  <parameters />
+  <cleanup />
+</project>
+

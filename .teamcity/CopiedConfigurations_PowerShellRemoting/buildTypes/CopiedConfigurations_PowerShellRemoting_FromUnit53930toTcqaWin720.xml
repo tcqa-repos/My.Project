@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="00d3c9e4-dc0f-4b10-b577-7ac0403eed3a" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>From Unit-539 (3.0) to tcqa-win7 (2.0)</name>
+  <description />
+  <settings ref="CopiedConfigurations_PowerShellRemoting_PowerShellRemoting">
+    <parameters>
+      <param name="computername" value="tcqa-win7" />
+      <param name="password" value="jb" />
+    </parameters>
+    <build-runners order="RUNNER_155, RUNNER_157, RUNNER_158" />
+    <vcs-settings />
+    <requirements>
+      <equals name="system.agent.name" value="UNIT-539" />
+    </requirements>
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

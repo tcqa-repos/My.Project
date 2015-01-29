@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="fadab9ed-1070-437d-9eb6-80f52d4b45fa" type="svn" modification-check-interval="30" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>TeamCity projects configuration files</name>
+  <param name="externals-mode" value="externals-none" />
+  <param name="labelingMessage" value="Labeled automatically by TeamCity" />
+  <param name="labelingPatterns" value="trunk=&gt;tags" />
+  <param name="secure:svn-password" value="zxx0378bf4d45c6fa14" />
+  <param name="svn-config-directory" value="C:\Users\Julia.Reshetnikova\AppData\Roaming\Subversion" />
+  <param name="svn-use-default-config-directory" value="true" />
+  <param name="url" value="https://tcqa-winsrv2012/svn/tc-projects" />
+  <param name="user" value="jetbrains" />
+  <param name="working-copy-format" value="1.7" />
+</vcs-root>
+

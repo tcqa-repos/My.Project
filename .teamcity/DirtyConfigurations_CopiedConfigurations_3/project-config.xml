@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="CopiedConfigurations" uuid="c56c269c-75e3-4d0e-b6d0-cdfe6159523d" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Copied Configurations (5)</name>
+  <description>use for experiments and to reproduce issues</description>
+  <parameters />
+  <cleanup />
+</project>
+

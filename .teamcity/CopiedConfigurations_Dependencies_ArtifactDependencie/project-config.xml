@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="CopiedConfigurations_Dependencies" uuid="6cff81db-2496-4a9a-9f5b-9cc01eb2b6e5" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Artifact Dependencies</name>
+  <parameters />
+  <cleanup />
+</project>
+

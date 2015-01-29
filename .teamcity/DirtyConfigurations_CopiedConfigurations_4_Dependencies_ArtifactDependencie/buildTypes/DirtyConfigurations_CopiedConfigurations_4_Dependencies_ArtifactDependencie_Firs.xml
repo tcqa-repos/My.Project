@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="08d53e43-4571-440b-a3b5-4e45dd3b5323" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>First Build</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="**\* =&gt; %build.number%" />
+      <option name="buildNumberPattern" value="mytext.%build.counter%" />
+    </options>
+    <parameters />
+    <build-runners />
+    <vcs-settings>
+      <vcs-entry-ref root-id="DirtyConfigurations_CopiedConfigurations_4_Dependencies_ArtifactDependencie_Ht_2" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

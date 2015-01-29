@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <project-graphs>
+    <graph title="Фыва" defaultFilters="" hideFilters="" seriesTitle="Serie" format="size">
+      <properties>
+        <property name="axis.y.max" value="" />
+        <property name="axis.y.type" value="logarithmic" />
+        <property name="axis.y.includeZero" value="true" />
+        <property name="axis.y.min" value="" />
+      </properties>
+      <valueType key="BuildDuration" title="Build Duration (all stages)" sourceBuildTypeId="CleanConfigurations_ServerPushTests_Tests" />
+      <valueType key="BuildArtifactsPublishingTime" title="Build Artifacts Publishing Time" sourceBuildTypeId="CleanConfigurations_ServerPushTests_Tests" />
+    </graph>
+    <graph title="New chart title 6" defaultFilters="" hideFilters="" seriesTitle="Serie" format="integer">
+      <valueType key="BuildDuration" title="Build Duration (all stages)" sourceBuildTypeId="CleanConfigurations_ServerPushTests_Tests" />
+    </graph>
+    <graph title="New chart title" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueType key="BuildDurationNetTime" title="Build Duration (excluding Checkout Time)" sourceBuildTypeId="CleanConfigurations_ServerPushTests_Tests" />
+      <valueType key="buildStageDuration:buildStepRUNNER_465" title="buildStageDuration:buildStepRUNNER_465" sourceBuildTypeId="CleanConfigurations_ServerPushTests_Tests" />
+      <valueType key="buildStageDuration:buildFinishing" title="buildStageDuration:buildFinishing" sourceBuildTypeId="CleanConfigurations_ServerPushTests_Tests" />
+    </graph>
+    <graph title="New chart title" defaultFilters="" hideFilters="" seriesTitle="Serie" format="percent">
+      <valueType key="buildStageDuration:buildFinishing" title="buildStageDuration:buildFinishing" sourceBuildTypeId="CleanConfigurations_ServerPushTests_Tests" />
+      <valueType key="buildStageDuration:buildStepRUNNER_465" title="buildStageDuration:buildStepRUNNER_465" sourceBuildTypeId="CleanConfigurations_ServerPushTests_Tests" />
+      <valueType key="buildStageDuration:buildStepRUNNER_466" title="buildStageDuration:buildStepRUNNER_466" sourceBuildTypeId="CleanConfigurations_ServerPushTests_Tests" />
+      <valueType key="BuildDurationNetTime" title="Build Duration (excluding Checkout Time)" sourceBuildTypeId="CleanConfigurations_ServerPushTests_Tests" />
+    </graph>
+  </project-graphs>
+  <buildtype-graphs>
+    <graph title="New chart title" defaultFilters="" hideFilters="" seriesTitle="Serie" format="duration">
+      <properties>
+        <property name="axis.y.max" value="" />
+        <property name="axis.y.type" value="logarithmic" />
+        <property name="axis.y.includeZero" value="true" />
+        <property name="axis.y.min" value="" />
+      </properties>
+      <valueType key="BuildDuration" title="Build Duration (all stages)" />
+    </graph>
+  </buildtype-graphs>
+</settings>
+

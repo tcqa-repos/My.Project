@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="2ebe8f59-fe0b-47e2-b347-6adce942351a" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Build C</name>
+  <description />
+  <settings>
+    <options>
+      <option name="showDependenciesChanges" value="true" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_280" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[ping 1.1.1.1
+exit 0]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <dependencies>
+      <depend-on sourceBuildTypeId="DirtyConfigurations_CopiedConfigurations1_Dependencies_SnapshotDependencies_Bui2">
+        <options>
+          <option name="run-build-if-dependency-failed-to-start" value="CANCEL" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

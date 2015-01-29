@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="42a43855-ec62-4493-a838-2f27cfb754d7" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Agent Clone</name>
+  <parameters>
+    <param name="agent.dir" value="%agents.parent.dir%/BuildAgent%agent.id%" spec="text validationMode='not_empty' display='hidden'" />
+    <param name="agent.id" value="" spec="text description='Will be used as installation folder and service suffix' validationMessage='Please specify some text to identify your agent' validationMode='regex' label='Agent identifier' display='prompt' regexp='|[A-Za-z0-9|]|[A-z a-z0-9|]+'" />
+  </parameters>
+  <cleanup />
+</project>
+

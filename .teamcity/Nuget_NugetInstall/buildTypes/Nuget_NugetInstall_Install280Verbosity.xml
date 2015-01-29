@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="6e844b4e-d8f5-4fed-9e39-2a32a358644e" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Install 2.8.0 Verbosity</name>
+  <description>With command line verbosity option</description>
+  <settings>
+    <options>
+      <option name="cleanBuild" value="true" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_65" name="" type="jb.nuget.installer">
+        <parameters>
+          <param name="nuget.path" value="?NuGet.CommandLine.2.8.0.nupkg" />
+          <param name="nuget.update.commandline"><![CDATA[-Verbosity
+detailed]]></param>
+          <param name="nuget.updatePackages" value="true" />
+          <param name="nuget.updatePackages.mode" value="sln" />
+          <param name="nuget.use.restore" value="install" />
+          <param name="nugetCustomPath" value="?NuGet.CommandLine.2.8.0.nupkg" />
+          <param name="nugetPathSelector" value="?NuGet.CommandLine.2.8.0.nupkg" />
+          <param name="sln.path" value="TestLibrary.sln" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Nuget_NugetFeedAuthentication_HttpsGithubComJuliaReshSlnWithNugetDep" />
+      <vcs-entry-ref root-id="Nuget_HttpsGithubComJuliaReshMyLibraryGit" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

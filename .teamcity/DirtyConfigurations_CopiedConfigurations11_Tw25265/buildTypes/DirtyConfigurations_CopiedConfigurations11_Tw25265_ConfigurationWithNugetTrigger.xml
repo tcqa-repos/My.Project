@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="64e5c63e-b298-47d3-afeb-d2a7c875e496" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Configuration with nuget trigger 2</name>
+  <description />
+  <settings>
+    <disabled-settings>
+      <setting-ref ref="TRIGGER_51" />
+    </disabled-settings>
+    <parameters />
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers>
+      <build-trigger id="TRIGGER_51" type="nuget.simple">
+        <parameters>
+          <param name="nuget.exe" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+          <param name="nuget.package" value="NewLibrary.ClassLibrary4" />
+          <param name="nuget.password" value="123" />
+          <param name="nuget.source" value="%teamcity.nuget.feed.auth.server%" />
+          <param name="nuget.username" value="Julia" />
+          <param name="nugetPathSelector" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <cleanup />
+  </settings>
+</build-type>
+

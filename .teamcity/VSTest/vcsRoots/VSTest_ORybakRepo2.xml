@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="3f6dcff0-675a-46cd-99e2-e06ed7ea7b55" type="jetbrains.git" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>ORybak repo2</name>
+  <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
+  <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
+  <param name="authMethod" value="PASSWORD" />
+  <param name="branch" value="refs/heads/master" />
+  <param name="ignoreKnownHosts" value="true" />
+  <param name="secure:password" value="zxx25faa591171973b54423ab58cd8f54b9" />
+  <param name="submoduleCheckout" value="CHECKOUT" />
+  <param name="url" value="https://orybak@bitbucket.org/orybak/dotnet.git" />
+  <param name="username" value="JuliaResh" />
+  <param name="usernameStyle" value="USERID" />
+</vcs-root>
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="Nuget" uuid="6654e792-48ba-4660-ae09-9524628d2ecc" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Nuget Feed Authentication</name>
+  <parameters />
+  <cleanup />
+</project>
+

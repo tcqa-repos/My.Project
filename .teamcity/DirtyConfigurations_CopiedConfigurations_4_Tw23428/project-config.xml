@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="DirtyConfigurations_CopiedConfigurations_4" uuid="02fa42a8-f8f4-4695-b90b-a8d1010195f9" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>TW-23428</name>
+  <description>Failed to start errors for other branches are shown on build configuration overview, when filtered by branch</description>
+  <parameters />
+  <cleanup />
+</project>
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <issueTrackers>
+    <trackerConnection key="youtrack1" type="youtrack">
+      <param name="secure:password" value="zxx0feb335798e7f083" />
+      <param name="username" value="root" />
+      <param name="host" value="http://tcqa-issue-trackers:8112/" />
+      <param name="idPrefix" value="TW" />
+      <param name="name" value="Local YouTrack" />
+    </trackerConnection>
+  </issueTrackers>
+</settings>
+

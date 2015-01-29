@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="687188cc-2b24-48ff-a0a5-bc21beac8e29" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Delete existing agent</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_12" name="Check build agent target directory" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<project name="Check Build Agent Target Directory" basedir="." default="check-agent-dir">
+  <target name="check-agent-dir" depends="do-check-agent-dir" unless="${agent.dir.exists}">
+    <property name="error.message" value="Agent directory was not found: %agent.dir%"/>
+    <echo message="##teamcity[buildStatus status='ERROR' text='${error.message}']"/>
+    <fail message="${error.message}"/>
+  </target>
+
+  <target name="do-check-agent-dir">
+    <condition property="agent.dir.exists" else="false">
+      <available file="%agent.dir%" type="dir" />
+    </condition>
+  </target>
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_32" name="Delete agent" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<project name="Start Build Agent" basedir="." default="delete-agent">
+  <target name="delete-agent" depends="check-os,delete-win-agent"/>
+  <target name="delete-win-agent" depends="uninstall-winservice,delete-agent-dir"/>
+
+  <target name="uninstall-winservice" if="${os.is.windows}">
+    <exec executable="cmd.exe" dir="%agent.dir%\bin">
+      <arg value="/c"/>
+      <arg value="%agent.dir%\bin\service.uninstall.bat"/>
+    </exec>
+  </target>
+
+  <target name="delete-agent-dir">
+      <delete dir="%agent.dir%"/>
+  </target>
+
+  <target name="check-os">
+    <condition property="os.is.windows" else="false">
+      <os family="windows"/>
+    </condition>
+    <condition property="os.is.linux" else="false">
+      <os family="unix"/>
+    </condition>
+    <condition property="os.is.macox" else="false">
+      <os family="mac"/>
+    </condition>
+  </target>
+
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="21cd9014-9f57-42dc-9a7e-e1cffa65450c" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Install (2.8.2) &amp; Update</name>
+  <description />
+  <settings>
+    <options>
+      <option name="checkoutMode" value="ON_AGENT" />
+      <option name="cleanBuild" value="true" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_167" name="Delete packages" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[C:
+cd %%LocalAppData%%\NuGet\Cache
+del *.* /Q]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_168" name="" type="jb.nuget.installer">
+        <parameters>
+          <param name="nuget.path" value="?NuGet.CommandLine.2.8.2.nupkg" />
+          <param name="nuget.sources" value="%teamcity.nuget.feed.auth.server%" />
+          <param name="nuget.updatePackages" value="true" />
+          <param name="nuget.updatePackages.mode" value="sln" />
+          <param name="nuget.use.restore" value="install" />
+          <param name="nugetCustomPath" value="?NuGet.CommandLine.2.8.2.nupkg" />
+          <param name="nugetPathSelector" value="?NuGet.CommandLine.2.8.2.nupkg" />
+          <param name="sln.path" value="TestLibrary.sln" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_185" name="" type="VS.Solution">
+        <parameters>
+          <param name="build-file-path" value="TestLibrary.sln" />
+          <param name="msbuild.prop.Configuration" value="Release" />
+          <param name="msbuild_version" value="12.0" />
+          <param name="run-platform" value="x86" />
+          <param name="targets" value="Rebuild" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="toolsVersion" value="12.0" />
+          <param name="vs.version" value="vs2013" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Nuget_NugetFeedAuthentication_HttpsGithubComJuliaReshSlnWithNugetDep" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_28" type="jb.nuget.auth">
+        <parameters>
+          <param name="nuget.auth.feed" value="%teamcity.nuget.feed.auth.server%" />
+          <param name="nuget.auth.username" value="Julia" />
+          <param name="secure:nuget.auth.password" value="zxx4469c7c25073dd9f" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

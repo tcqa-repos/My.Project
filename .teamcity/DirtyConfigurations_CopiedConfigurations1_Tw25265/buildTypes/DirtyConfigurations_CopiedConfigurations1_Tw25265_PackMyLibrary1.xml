@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="959a1208-638b-40e6-9745-ae0e6e3fadb1" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Pack MyLibrary (1)</name>
+  <description />
+  <settings>
+    <disabled-settings>
+      <setting-ref ref="TRIGGER_44" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_288" name="" type="VS.Solution">
+        <parameters>
+          <param name="build-file-path" value="MyLibrary.sln" />
+          <param name="msbuild.prop.Configuration" value="Release" />
+          <param name="msbuild_version" value="4.5" />
+          <param name="run-platform" value="x86" />
+          <param name="targets" value="Build" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="toolsVersion" value="4.0" />
+          <param name="vs.version" value="vs2012" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_289" name="" type="jb.nuget.pack">
+        <parameters>
+          <param name="nuget.pack.as.artifact" value="true" />
+          <param name="nuget.pack.output.directory" value="\nuget" />
+          <param name="nuget.pack.project.dir" value="as_is" />
+          <param name="nuget.pack.properties" value="Configuration=Release" />
+          <param name="nuget.pack.specFile" value="ClassLibrary1/MyLibrary.csproj" />
+          <param name="nuget.pack.version" value="1.0.%build.number%" />
+          <param name="nuget.path" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+          <param name="nugetCustomPath" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+          <param name="nugetPathSelector" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="DirtyConfigurations_CopiedConfigurations1_Tw25265_HttpsGithubComJuliaReshMyLibra" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="TRIGGER_44" type="schedulingTrigger">
+        <parameters>
+          <param name="cronExpression_dm" value="*" />
+          <param name="cronExpression_dw" value="?" />
+          <param name="cronExpression_hour" value="*" />
+          <param name="cronExpression_min" value="0" />
+          <param name="cronExpression_month" value="*" />
+          <param name="cronExpression_sec" value="0" />
+          <param name="cronExpression_year" value="*" />
+          <param name="dayOfWeek" value="Sunday" />
+          <param name="hour" value="7" />
+          <param name="minute" value="0" />
+          <param name="schedulingPolicy" value="daily" />
+          <param name="timezone" value="SERVER" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <cleanup />
+  </settings>
+</build-type>
+

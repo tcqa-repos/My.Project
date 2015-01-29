@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <JetBrains.SharedResources>
+    <resource>
+      <name>Test_Resource32</name>
+      <values type="quota">
+        <quota>infinite</quota>
+      </values>
+    </resource>
+    <resource>
+      <name>Test_Resource33</name>
+      <values type="quota">
+        <quota>infinite</quota>
+      </values>
+    </resource>
+    <resource>
+      <name>Test_Resource30</name>
+      <values type="quota">
+        <quota>infinite</quota>
+      </values>
+    </resource>
+    <resource>
+      <name>Test_Resource31</name>
+      <values type="quota">
+        <quota>infinite</quota>
+      </values>
+    </resource>
+    <resource>
+      <name>Test_Resource2</name>
+      <values type="quota">
+        <quota>infinite</quota>
+      </values>
+    </resource>
+    <resource>
+      <name>Test_Resource5</name>
+      <values type="quota">
+        <quota>infinite</quota>
+      </values>
+    </resource>
+    <resource>
+      <name>Test_Resource4</name>
+      <values type="quota">
+        <quota>infinite</quota>
+      </values>
+    </resource>
+    <resource>
+      <name>Test_Resource10</name>
+      <values type="quota">
+        <quota>infinite</quota>
+      </values>
+    </resource>
+  </JetBrains.SharedResources>
+</settings>
+

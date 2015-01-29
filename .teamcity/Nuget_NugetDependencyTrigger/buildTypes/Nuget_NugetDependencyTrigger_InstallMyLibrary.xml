@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="199379ae-e5ab-41f3-8aa4-21e2b8e25149" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Install MyLibrary (1)</name>
+  <description />
+  <settings>
+    <disabled-settings>
+      <setting-ref ref="BUILD_EXT_116" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_492" name="" type="jb.nuget.installer">
+        <parameters>
+          <param name="nuget.noCache" value="true" />
+          <param name="nuget.path" value="?NuGet.CommandLine.2.8.2.nupkg" />
+          <param name="nuget.sources" value="%teamcity.nuget.feed.auth.server%" />
+          <param name="nuget.updatePackages" value="true" />
+          <param name="nuget.updatePackages.mode" value="sln" />
+          <param name="nuget.use.restore" value="install" />
+          <param name="nugetPathSelector" value="?NuGet.CommandLine.2.8.2.nupkg" />
+          <param name="sln.path" value="TestLibrary.sln" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Nuget_HttpsGithubComJuliaReshMyLibraryGit1" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="TRIGGER_85" type="nuget.simple">
+        <parameters>
+          <param name="nuget.exe" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+          <param name="nuget.package" value="MyTest012345.ClassLibrary111" />
+          <param name="nuget.source" value="%teamcity.nuget.feed.server%" />
+          <param name="nugetCustomPath" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+          <param name="nugetPathSelector" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <build-extensions>
+      <extension id="BUILD_EXT_116" type="jb.nuget.auth">
+        <parameters>
+          <param name="nuget.auth.feed" value="%teamcity.nuget.feed.auth.server%" />
+          <param name="nuget.auth.username" value="Julia" />
+          <param name="secure:nuget.auth.password" value="zxx4469c7c25073dd9f" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

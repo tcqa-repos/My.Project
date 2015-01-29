@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="03d2f76c-6af4-4d03-b560-412020b22437" type="jetbrains.git" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>JB WebSockets</name>
+  <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
+  <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
+  <param name="authMethod" value="PRIVATE_KEY_FILE" />
+  <param name="branch" value="refs/heads/master" />
+  <param name="ignoreKnownHosts" value="true" />
+  <param name="privateKeyPath" value="C:\Users\Julia.Reshetnikova\.ssh\identity2" />
+  <param name="secure:passphrase" value="zxx2e199bb2d35955c7775d03cbe80d301b" />
+  <param name="submoduleCheckout" value="CHECKOUT" />
+  <param name="url" value="git@git.labs.intellij.net:teamcity/tests/websockets.git" />
+  <param name="useAlternates" value="true" />
+  <param name="usernameStyle" value="USERID" />
+</vcs-root>
+

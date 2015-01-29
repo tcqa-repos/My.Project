@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <project-graphs>
+    <graph title="Chart with data from BuildA" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueType key="BuildDuration" title="Build Duration (all stages)" sourceBuildTypeId="CleanConfigurations_CustomCharts_TestPermissions_SubProjectA_BuildA" />
+    </graph>
+    <graph title="Chart with data from BuildB" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueType key="BuildDuration" title="Build Duration (all stages)" sourceBuildTypeId="CleanConfigurations_CustomCharts_TestPermissions_SubProjectB_BuildB" />
+    </graph>
+  </project-graphs>
+</settings>
+

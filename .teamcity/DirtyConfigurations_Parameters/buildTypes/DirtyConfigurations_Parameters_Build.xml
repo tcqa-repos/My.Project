@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="13594c79-9abc-4a4c-97d5-b109452b1812" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Build</name>
+  <description />
+  <settings>
+    <parameters>
+      <param name="test1" value="" spec="select data_2='test2' data_1='test1' display='prompt'" />
+      <param name="test2" value="blabla" spec="select data_2='test4' data_1='test3' display='normal'" />
+      <param name="Test3" value="123" spec="text validationMode='regex' display='normal' regexp='|[a-z|]+'" />
+      <param name="test4" value="" spec="checkbox display='normal'" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_520" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="exit 0" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

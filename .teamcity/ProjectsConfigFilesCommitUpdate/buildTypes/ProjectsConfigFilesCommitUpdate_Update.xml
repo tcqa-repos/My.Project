@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="ff3c5453-6baf-4539-a7c3-cd2d2a3d2ef2" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Update</name>
+  <description />
+  <settings>
+    <options>
+      <option name="checkoutMode" value="MANUAL" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_101" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[@echo on
+cd "%teamcity.data.directory%\config\projects
+svn update  --username %svn_user% --password %svn_password% --non-interactive --trust-server-cert]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="TcProjectConfigsCommitUpdate_TeamCityProjectsConfigurationFiles">
+        <checkout-rule rule="+:trunk =&gt; ." />
+      </vcs-entry-ref>
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="vcsTrigger" type="vcsTrigger">
+        <parameters>
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <cleanup />
+  </settings>
+</build-type>
+

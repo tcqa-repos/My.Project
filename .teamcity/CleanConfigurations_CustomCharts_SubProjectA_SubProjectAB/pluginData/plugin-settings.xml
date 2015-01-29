@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <project-graphs>
+    <graph title="New chart title" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueType key="ArtifactsResolvingTime" title="Artifact Dependencies Resolving Time" sourceBuildTypeId="CleanConfigurations_CustomCharts_SubProjectA_BuildA" />
+      <valueType key="BuildDuration" title="Build Duration (all stages)" sourceBuildTypeId="CleanConfigurations_CustomCharts_SubProjectA_BuildA" />
+    </graph>
+  </project-graphs>
+</settings>
+

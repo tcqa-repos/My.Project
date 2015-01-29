@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="45b0a1e3-5e2e-43b5-9274-234614d61efa" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Second Build</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="**\* =&gt;" />
+      <option name="checkoutMode" value="MANUAL" />
+    </options>
+    <disabled-settings>
+      <setting-ref ref="TRIGGER_36" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_272" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[ping 1.1.1.1
+exit 0]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="DirtyConfigurations_CopiedConfigurations1_Dependencies_ArtifactDependencie_Http2" />
+      <vcs-entry-ref root-id="DirtyConfigurations_CopiedConfigurations1_Dependencies_ArtifactDependencie_Https" />
+    </vcs-settings>
+    <requirements>
+      <equals name="system.agent.name" value="UNIT-539" />
+    </requirements>
+    <build-triggers>
+      <build-trigger id="TRIGGER_35" type="schedulingTrigger">
+        <parameters>
+          <param name="cronExpression_dm" value="*" />
+          <param name="cronExpression_dw" value="?" />
+          <param name="cronExpression_hour" value="*" />
+          <param name="cronExpression_min" value="0" />
+          <param name="cronExpression_month" value="*" />
+          <param name="cronExpression_sec" value="0" />
+          <param name="cronExpression_year" value="*" />
+          <param name="dayOfWeek" value="Sunday" />
+          <param name="hour" value="16" />
+          <param name="minute" value="10" />
+          <param name="schedulingPolicy" value="daily" />
+          <param name="timezone" value="SERVER" />
+        </parameters>
+      </build-trigger>
+      <build-trigger id="TRIGGER_36" type="buildDependencyTrigger">
+        <parameters>
+          <param name="afterSuccessfulBuildOnly" value="true" />
+          <param name="dependsOn" value="DirtyConfigurations_CopiedConfigurations1_Dependencies_ArtifactDependencie_First" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <artifact-dependencies>
+      <dependency sourceBuildTypeId="DirtyConfigurations_CopiedConfigurations1_Dependencies_ArtifactDependencie_First" cleanDestination="true">
+        <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
+        <artifact sourcePath="**\* =&gt; art_from_%dep.DirtyConfigurations_CopiedConfigurations1_Dependencies_ArtifactDependencie_First.build.number%.zip" />
+      </dependency>
+    </artifact-dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

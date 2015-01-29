@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="1db8ca6a-2d6e-4230-aec9-7fbca9e6cec9" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Report Custom Statistics (2)</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_499" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[echo ##teamcity[buildStatisticValue key='MyAwesomeKey42' value='25']
+echo ##teamcity[buildStatisticValue key='MyNewAwesomeKey42' value='25']]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+
