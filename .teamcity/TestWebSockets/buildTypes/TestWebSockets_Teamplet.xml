@@ -3,7 +3,15 @@
   <name>Teamplet</name>
   <settings>
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_19" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo 0" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings />
     <requirements />
     <build-triggers />
