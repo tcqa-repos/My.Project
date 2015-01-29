@@ -5,7 +5,7 @@
   <parameters />
   <cleanup>
     <options>
-      <option name="preventDependenciesArtifactsFromCleanup" value="false" />
+      <option name="preventDependenciesArtifactsFromCleanup" value="true" />
     </options>
   </cleanup>
 </project>
