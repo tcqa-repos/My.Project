@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="6e6b9566-9e8c-463b-af0d-bdbdc32f7d04" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Sqlcmd.exe in "-Command-" mode</name>
+  <description>Infinite loop is expected. Server health report should appear.</description>
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_6" name="" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_errorToError" value="true" />
+          <param name="jetbrains_powershell_execution" value="STDIN" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[sqlcmd -S localhost -d Test -Q "SET NOCOUNT ON"
+Write-Host "exit code: $lastexitcode"]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_2" type="BuildFailureOnMetric">
+        <parameters>
+          <param name="anchorBuild" value="lastSuccessful" />
+          <param name="metricKey" value="BuildDurationNetTime" />
+          <param name="metricThreshold" value="30" />
+          <param name="metricUnits" value="metricUnitsDefault" />
+          <param name="moreOrLess" value="more" />
+          <param name="withBuildAnchor" value="false" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

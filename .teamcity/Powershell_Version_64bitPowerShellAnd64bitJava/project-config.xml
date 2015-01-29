@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="Powershell_Version" uuid="d6604c29-2806-4fd2-8d81-ed92e31af479" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>64-bit PowerShell and 64-bit java</name>
+  <parameters>
+    <param name="powershell.keep.generated" value="true" />
+  </parameters>
+  <cleanup />
+</project>
+

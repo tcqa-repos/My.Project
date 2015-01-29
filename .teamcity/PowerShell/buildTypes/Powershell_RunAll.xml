@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="720aa59e-1588-43b2-83e5-1a7662a3c416" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>_Run All_</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers>
+      <build-trigger id="TRIGGER_10" type="schedulingTrigger">
+        <parameters>
+          <param name="cronExpression_dm" value="*" />
+          <param name="cronExpression_dw" value="?" />
+          <param name="cronExpression_hour" value="*" />
+          <param name="cronExpression_min" value="0" />
+          <param name="cronExpression_month" value="*" />
+          <param name="cronExpression_sec" value="0" />
+          <param name="cronExpression_year" value="*" />
+          <param name="dayOfWeek" value="Sunday" />
+          <param name="hour" value="12" />
+          <param name="minute" value="0" />
+          <param name="schedulingPolicy" value="daily" />
+          <param name="timezone" value="SERVER" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <dependencies>
+      <depend-on sourceBuildTypeId="Powershell_WorkingDirectory" />
+      <depend-on sourceBuildTypeId="Powershell_Build">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Powershell_WorkingDirectory_CheckWorkingDirectory111">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Powershell_ScriptFormatting_RunAll">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Powershell_ScriptOutput_RunAll">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Powershell_TempScriptDeletion_RunAll">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Powershell_WorkingDirectory_RunAll">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Powershell_Arguments_RunAll">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Powershell_InfiniteLoop_SqlcmdExeViaExternalFile">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="PowerShell_FileWithPowershellUseFile_RunAll">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Powershell_BuildStepFailure_RunAll">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Powershell_Version_RunAll">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

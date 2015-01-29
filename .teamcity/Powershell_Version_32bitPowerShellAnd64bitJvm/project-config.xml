@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="Powershell_Version" uuid="bf61d210-ba7b-4f52-a94b-3eead71a5c87" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>32-bit PowerShell and 64-bit jvm</name>
+  <parameters />
+  <cleanup />
+</project>
+

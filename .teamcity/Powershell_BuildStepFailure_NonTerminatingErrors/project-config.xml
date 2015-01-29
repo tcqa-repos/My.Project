@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="Powershell_BuildStepFailure" uuid="b3e30a3f-6c0e-4104-930b-f3fae2d35931" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Non-Terminating Errors</name>
+  <parameters />
+  <cleanup />
+</project>
+

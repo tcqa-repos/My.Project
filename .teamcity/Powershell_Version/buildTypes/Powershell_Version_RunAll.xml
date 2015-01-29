@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="1d31be88-f8bf-4f74-a2bb-b154559b0289" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>_Run All_</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <dependencies>
+      <depend-on sourceBuildTypeId="Powershell_Version_32bitPowerShell_2_RunAll">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="run-build-if-dependency-failed-to-start" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Powershell_Version_RunAllVersion">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="run-build-if-dependency-failed-to-start" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Powershell_Version_32bitPowerShellAnd64bitJvm_RunAll">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="run-build-if-dependency-failed-to-start" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="Powershell_Version_64bitPowerShellAnd64bitJava_RunAll">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="run-build-if-dependency-failed-to-start" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

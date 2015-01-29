@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="PowerShell" uuid="0dc35b17-dbe9-4a61-8508-86d1e012e151" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Working Directory</name>
+  <description>TW-35068</description>
+  <parameters>
+    <param name="file" value="file.txt" />
+    <param name="path" value="" />
+  </parameters>
+  <cleanup />
+</project>
+

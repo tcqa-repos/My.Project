@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <project-graphs>
+    <graph title="Chart title" defaultFilters="" hideFilters="" seriesTitle="Serie" format="duration">
+      <properties>
+        <property name="axis.y.max" value="" />
+        <property name="axis.y.type" value="default" />
+        <property name="axis.y.includeZero" value="true" />
+        <property name="axis.y.min" value="" />
+      </properties>
+      <valueType key="BuildDuration" title="BuildDuration" sourceBuildTypeId="Powershell_RunAll" />
+    </graph>
+    <graph title="Chart title" defaultFilters="" hideFilters="" seriesTitle="Serie" format="integer">
+      <valueType key="VisibleArtifactsSize" title="VisibleArtifactsSize" sourceBuildTypeId="Powershell_RunAll" />
+      <valueType key="ArtifactsResolvingTime" title="ArtifactsResolvingTime" sourceBuildTypeId="Powershell_RunAll" />
+      <valueType key="BuildDuration" title="BuildDuration" sourceBuildTypeId="Powershell_RunAll" />
+      <valueType key="DuplicatorStats" title="DuplicatorStats" sourceBuildTypeId="Powershell_RunAll" />
+    </graph>
+    <graph title="New chart title" defaultFilters="" hideFilters="" seriesTitle="Serie" format="integer">
+      <valueType key="BuildArtifactsPublishingTime" title="BuildArtifactsPublishingTime" sourceBuildTypeId="PowerShell_FileWithPowershellUseFile_RunAll" />
+      <valueType key="buildStageDuration:artifactsPublishing" title="buildStageDuration:artifactsPublishing" sourceBuildTypeId="PowerShell_FileWithPowershellUseFile_RunAll" />
+      <valueType key="buildStageDuration:artifactsPublishing" title="buildStageDuration:artifactsPublishing" sourceBuildTypeId="PowerShell_FileWithPowershellUseFile_RunAll" />
+      <valueType key="BuildTestStatus" title="BuildTestStatus" sourceBuildTypeId="PowerShell_FileWithPowershellUseFile_RunAll" />
+      <valueType key="TimeSpentInQueue" title="TimeSpentInQueue" sourceBuildTypeId="PowerShell_FileWithPowershellUseFile_RunAll" />
+      <valueType key="BuildTestStatus" title="BuildTestStatus" sourceBuildTypeId="PowerShell_FileWithPowershellUseFile_RunAll" />
+    </graph>
+    <graph title="New chart title" defaultFilters="" hideFilters="" seriesTitle="Serie" format="integer">
+      <valueType key="buildStageDuration:artifactsPublishing" title="buildStageDuration:artifactsPublishing" sourceBuildTypeId="PowerShell_FileWithPowershellUseFile_PowerShell30" />
+    </graph>
+  </project-graphs>
+</settings>
+

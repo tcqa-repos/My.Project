@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="PowerShell" uuid="082bcc79-68f9-4c7c-85ba-289c158528bd" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Infinite Loop</name>
+  <description>TW-17732</description>
+  <parameters />
+  <cleanup />
+</project>
+

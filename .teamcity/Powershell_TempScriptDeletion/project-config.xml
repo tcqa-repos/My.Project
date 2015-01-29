@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="PowerShell" uuid="92f90403-1b88-409e-b10b-ed17d2bf3e6e" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Temporary Script Deletion</name>
+  <description>TW-35069, TW-36704, TW-22816, TW-21923</description>
+  <parameters>
+    <param name="some parameter" value="falseytr" />
+  </parameters>
+  <cleanup />
+</project>
+

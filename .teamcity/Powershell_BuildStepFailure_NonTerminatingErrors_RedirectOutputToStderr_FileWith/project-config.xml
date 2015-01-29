@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="Powershell_BuildStepFailure_NonTerminatingErrors_RedirectOutputToStderr" uuid="64c797ac-6173-4b35-b778-d90f272bee34" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>File with Write-Error</name>
+  <parameters />
+  <cleanup />
+</project>
+

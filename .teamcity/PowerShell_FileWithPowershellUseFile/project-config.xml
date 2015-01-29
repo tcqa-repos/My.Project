@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="PowerShell" uuid="ad67521f-78da-4e5e-908c-cee82a714275" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>"-File" with powershell.use.file</name>
+  <description>TW-34410</description>
+  <parameters>
+    <param name="powershell.use.file" value="true" />
+  </parameters>
+  <cleanup />
+</project>
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="88d5059d-b337-43ee-8509-bf45433119ad" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>PowerShell 1.0</name>
+  <description />
+  <settings ref="Powershell_Arguments_Arguments_2">
+    <parameters />
+    <build-runners order="RUNNER_55, RUNNER_74, RUNNER_4, RUNNER_7, RUNNER_66, RUNNER_69, RUNNER_146, RUNNER_147, RUNNER_480" />
+    <vcs-settings />
+    <requirements>
+      <equals name="powershell_x86" value="1.0" />
+    </requirements>
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

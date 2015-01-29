@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="93b695fe-7023-4fbf-a31a-745a3dbe7198" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Absolute path to working directory</name>
+  <description />
+  <settings ref="Powershell_WorkingDirectory_CheckFileWasCreatedInSpecifiedWorkingDirectory">
+    <parameters>
+      <param name="path" value="C:\testpowershell-%teamcity.agent.ownPort%" />
+    </parameters>
+    <build-runners order="RUNNER_10, RUNNER_11" />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

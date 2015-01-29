@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="949e37cc-d66f-48cf-80af-f9df36d4e70f" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Checked out script has spaces in name</name>
+  <description />
+  <settings ref="Powershell_TempScriptDeletion_CheckedOutScriptIsNotDeleted_2">
+    <parameters>
+      <param name="file_name" value="filename with spaces.ps1" />
+    </parameters>
+    <build-runners order="RUNNER_192, RUNNER_193, RUNNER_194, RUNNER_195" />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

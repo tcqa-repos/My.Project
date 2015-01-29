@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="Powershell_BuildStepFailure_NonTerminatingErrors" uuid="d09c7848-ee6b-4fbe-b1b6-c3c12955cd63" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Redirect Output to Stderr</name>
+  <parameters />
+  <cleanup />
+</project>
+

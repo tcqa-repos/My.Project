@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="12b4627c-a89a-48d1-9329-6f7a81742ff3" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>PowerShell 2.0</name>
+  <description />
+  <settings ref="Powershell_BuildStepFailure_ExitCode0_ScriptsWithTerminatingErrors">
+    <parameters />
+    <build-runners order="RUNNER_149" />
+    <vcs-settings />
+    <requirements>
+      <equals name="powershell_x86" value="2.0" />
+    </requirements>
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

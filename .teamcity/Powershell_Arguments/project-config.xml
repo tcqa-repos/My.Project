@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="PowerShell" uuid="b8c21149-5642-476b-ba41-c3de26b60c01" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Arguments</name>
+  <description>TW-34557, TW-35063, TW-37730</description>
+  <parameters />
+  <cleanup />
+</project>
+

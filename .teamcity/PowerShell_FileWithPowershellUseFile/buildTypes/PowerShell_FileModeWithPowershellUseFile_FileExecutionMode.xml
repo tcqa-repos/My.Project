@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="4bef4f66-16e7-45ee-a812-c40b20b89e52" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>-File execution mode</name>
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_37" name="Script from source code" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_script_code" value="Write-Output &quot;Hello, World!&quot;" />
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="execute_if_failed" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_40" name="Script from file" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_script_file" value="argument.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="execute_if_failed" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_41" name="File with spaces" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_script_file" value="filename with spaces.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="execute_if_failed" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_42" name="With arguments" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x86" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_scriptArguments"><![CDATA["one message"
+two messages]]></param>
+          <param name="jetbrains_powershell_script_file" value="argument.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="execute_if_failed" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Powershell_PowerShell" />
+    </vcs-settings>
+    <requirements>
+      <equals name="powershell_x86" value="" />
+    </requirements>
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_53" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^one message$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_54" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^two$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_55" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="^messages$" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</template>
+

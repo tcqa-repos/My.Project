@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="54e50f34-614b-4c62-835c-32a0efc44c9a" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>_Run All_</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <dependencies>
+      <depend-on sourceBuildTypeId="Powershell_Version_32bitPowerShell_2_Version10" />
+      <depend-on sourceBuildTypeId="Powershell_Version_32bitPowerShell_2_Version20" />
+      <depend-on sourceBuildTypeId="Powershell_Version_32bitPowerShell_2_Version30" />
+      <depend-on sourceBuildTypeId="Powershell_Version_32bitPowerShell_2_Version40" />
+      <depend-on sourceBuildTypeId="Powershell_Version_32bitPowerShell_2_VersionAny" />
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

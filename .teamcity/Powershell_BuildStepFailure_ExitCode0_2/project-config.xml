@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="Powershell_BuildStepFailure_ExitCodeSentViaTryCatch" uuid="7f0d30a5-7085-487e-8a5d-ea621cb1bc4d" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Exit Code &gt; 0</name>
+  <parameters />
+  <cleanup />
+</project>
+

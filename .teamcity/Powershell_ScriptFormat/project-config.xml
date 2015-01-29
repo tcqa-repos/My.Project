@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="PowerShell" uuid="a839965b-5e0a-4fb0-a4e7-c4944e49657b" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Script Format</name>
+  <description>TW-31683, TW-36815</description>
+  <parameters />
+  <cleanup />
+</project>
+
