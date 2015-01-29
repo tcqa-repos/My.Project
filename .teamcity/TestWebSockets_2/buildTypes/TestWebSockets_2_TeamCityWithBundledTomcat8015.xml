@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="31f46256-7291-415d-887a-53c9375a0806" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>TeamCity with Tomcat 8.0.15</name>
+  <description />
+  <settings>
+    <parameters>
+      <param name="agent.port" value="9291" />
+      <param name="catalina.port" value="8909" />
+      <param name="server.port" value="8112" />
+      <param name="system.admin.password" value="admin" />
+      <param name="system.admin.username" value="admin" />
+      <param name="system.password" value="%system.admin.password%" />
+      <param name="system.server-url" value="http://localhost:8112/TeamCity" />
+      <param name="system.server.url" value="http://localhost:8112/TeamCity" />
+      <param name="system.username" value="%system.admin.username%" />
+      <param name="teamcity.artifacts.clean.after.build.TeamCitySetup_GetTeamCity" value="true" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_8" name="Unpack Tomcat into target directory" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<project name="Unpack TeamCity " basedir="WorkDir" default="unpack">
+  <target name="unpack">
+    <gunzip src="apache-tomcat-8.0.15.tar.gz" dest="${basedir}"/>
+    <delete file="apache-tomcat-8.0.15.tar.gz" quiet="true"/>
+    <untar src="apache-tomcat-8.0.15.tar" dest="${basedir}"/>
+    <delete file="apache-tomcat-8.0.15.tar" quiet="true"/>
+  </target>
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_9" name="Copy TeamCity.war into webapps" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<project name="Unpack TeamCity " basedir="WorkDir" default="copy">
+  <target name="copy">
+    <copy file="TeamCity.war" todir="apache-tomcat-8.0.15/webapps"/>
+  </target>
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_10" name="Configure TeamCity" type="Ant">
+        <parameters>
+          <param name="build-file">&lt;project name="Configure TeamCity" basedir="WorkDir\apache-tomcat-8.0.15" default="configure-server"&gt;
+  &lt;target name="configure-server" depends="check-os,configure-ports"/&gt;
+  
+  &lt;target name="configure-ports"&gt;
+    &lt;replace casesensitive="false" file="${basedir}/conf/server.xml"&gt;
+      &lt;replacefilter&gt;
+        &lt;replacetoken&gt;&lt;![CDATA[&lt;Server port="8005" shutdown="SHUTDOWN"&gt;]]&gt;&lt;/replacetoken&gt;  
+        &lt;replacevalue&gt;&lt;![CDATA[&lt;Server port="%catalina.port%" shutdown="SHUTDOWN"&gt;]]&gt;&lt;/replacevalue&gt;  
+      &lt;/replacefilter&gt;
+      &lt;replacefilter&gt;
+        &lt;replacetoken&gt;&lt;![CDATA[&lt;&lt;Connector port="8080" protocol="HTTP/1.1"]]&gt;&lt;/replacetoken&gt;  
+        &lt;replacevalue&gt;&lt;![CDATA[&lt;Connector port="%server.port%" protocol="HTTP/1.1"]]&gt;&lt;/replacevalue&gt;  
+      &lt;/replacefilter&gt;
+    &lt;/replace&gt;
+  &lt;/target&gt;
+
+  &lt;target name="check-os"&gt;
+    &lt;condition property="os.is.windows" else="false"&gt;
+      &lt;os family="windows"/&gt;
+    &lt;/condition&gt;
+  &lt;/target&gt;
+
+&lt;/project&gt;</param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_11" name="Start TeamCity" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<project name="Start TeamCity" basedir="WorkDir\apache-tomcat-8.0.15\bin" default="start-server">
+  <target name="start-server" depends="check-os,start-server-win"/>
+
+  <target name="start-server-win" if="${os.is.windows}">
+   <echo file="start.bat" append="true">
+     set &quot;CATALINA_OPTS=-Xmx750m -XX:MaxPermSize=270m&quot;
+     set &quot;TEAMCITY_DATA_PATH=WorkDir\DataDirectory&quot;
+     ${basedir}\startup.bat
+   </echo>
+    <exec executable="cmd.exe">
+      <arg value="/c"/>
+      <arg value="${basedir}\start.bat"/>
+    </exec>
+  </target>
+  
+  <target name="check-os">
+    <condition property="os.is.windows" else="false">
+      <os family="windows"/>
+    </condition>
+  </target>
+
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_12" name="TeamCity Initialization" type="JPS">
+        <parameters>
+          <param name="iprInfoRunParam"><![CDATA[<iprInfo path-to-ipr="" should-load-iml="true">
+  <Jdk name="1.7" path-to-library="%env.JDK_17%" is-used="true" type="JavaSDK" path-to-jdk="%env.JDK_17%">
+    <Pattern value="jre/lib/*.jar" />
+    <ExternalAnnotationPattern value="%teamcity.tool.idea%/lib/jdkAnnotations.jar" />
+  </Jdk>
+</iprInfo>]]></param>
+          <param name="jvmArgs" value="-Xmx256m" />
+          <param name="runConfigurations" value="TeamCityInit" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="TestWebSockets_2_GitWebSockets" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="swabra" type="swabra">
+        <parameters>
+          <param name="swabra.enabled" value="swabra.before.build" />
+          <param name="swabra.processes" value="kill" />
+          <param name="swabra.rules" value="+:WorkDir" />
+          <param name="swabra.strict" value="true" />
+          <param name="swabra.verbose" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <artifact-dependencies>
+      <dependency sourceBuildTypeId="TestWebSockets_2_GetTeamCity" cleanDestination="false">
+        <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
+        <artifact sourcePath="+:TeamCity.war=&gt;WorkDir" />
+      </dependency>
+      <dependency sourceBuildTypeId="TestWebSockets_2_GetTomCat8015" cleanDestination="false">
+        <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
+        <artifact sourcePath="+:apache-tomcat-8.0.15.tar.gz=&gt;WorkDir" />
+      </dependency>
+    </artifact-dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+
