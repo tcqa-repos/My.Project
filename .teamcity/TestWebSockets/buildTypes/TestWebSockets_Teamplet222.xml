@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="4f14e9c7-9407-4041-b959-d255814863c4" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
-  <name>Teamplet</name>
+  <name>Teamplet22</name>
   <settings>
     <parameters />
     <build-runners>
