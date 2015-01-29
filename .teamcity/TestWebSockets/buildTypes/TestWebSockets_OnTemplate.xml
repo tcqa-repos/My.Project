@@ -2,7 +2,7 @@
 <build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="59de30c6-4488-4830-b317-3e6044aa9105" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
   <name>On_Template</name>
   <description />
-  <settings ref="TestWebSockets_Teamplet22">
+  <settings ref="TestWebSockets_Teamplet222">
     <parameters />
     <build-runners order="RUNNER_19" />
     <vcs-settings />
