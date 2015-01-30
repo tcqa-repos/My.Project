@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="b8e2e037-99eb-4553-8010-5660eb372511" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Get TeamCity</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="**/* =&gt;" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_1" name="Fetch TeamCity.tar.gz" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<project name="Fetch TeamCity Archive" basedir="." default="fetch">
+  <target name="fetch">
+    <get src="http://buildserver/guestAuth/repository/download/TC_Trunk_BuildDist/.lastFinished/TeamCity-{build.number}.tar.gz" dest="${basedir}/TeamCity.tar.gz"/>
+  </target>
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_2" name="Fetch TeamCity.war" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<project name="Fetch TeamCity Archive" basedir="." default="fetch">
+  <target name="fetch">
+    <get src="http://buildserver/guestAuth/repository/download/TC_Trunk_BuildDist/.lastFinished/TeamCity-{build.number}.war" dest="${basedir}/TeamCity.war"/>
+  </target>
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+
