@@ -8,7 +8,7 @@
     </options>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_1" name="Fetch TeamCity.tar.gz renamed" type="Ant">
+      <runner id="RUNNER_1" name="Fetch TeamCity.tar.gz" type="Ant">
         <parameters>
           <param name="build-file"><![CDATA[<project name="Fetch TeamCity Archive" basedir="." default="fetch">
   <target name="fetch">
