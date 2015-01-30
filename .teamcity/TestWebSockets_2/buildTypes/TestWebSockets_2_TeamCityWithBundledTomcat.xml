@@ -159,7 +159,7 @@
       </extension>
     </build-extensions>
     <artifact-dependencies>
-      <dependency sourceBuildTypeId="TestWebSockets_2_GetTeamCity" cleanDestination="false">
+      <dependency sourceBuildTypeId="TestWebSockets_2_GetTeamCity_3" cleanDestination="false">
         <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
         <artifact sourcePath="+:TeamCity.tar.gz=&gt;WorkDir" />
       </dependency>
