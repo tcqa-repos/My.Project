@@ -144,7 +144,7 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="RUNNER_17" name="Run Server Push Tests" type="JPS">
+      <runner id="RUNNER_17" name="Run Server Push Tests" type="abc">
         <parameters>
           <param name="iprInfoRunParam"><![CDATA[<iprInfo path-to-ipr="" should-load-iml="true">
   <Jdk name="1.7" path-to-library="%env.JDK_17%" is-used="true" type="JavaSDK" path-to-jdk="%env.JDK_17%">
