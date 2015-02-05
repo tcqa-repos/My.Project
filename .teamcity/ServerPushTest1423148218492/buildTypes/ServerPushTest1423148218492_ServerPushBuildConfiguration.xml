@@ -4,7 +4,19 @@
   <description />
   <settings>
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_524" name="" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<project name="Sleep" default="sleep" >
+           <target name="sleep">
+                <sleep seconds="7"/>
+          </target>
+</project>]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings />
     <requirements />
     <build-triggers />
