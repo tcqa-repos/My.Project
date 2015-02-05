@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="7e6ad0e8-0a86-42b2-9595-6e98bae58086" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Server Push Build Configuration</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+
