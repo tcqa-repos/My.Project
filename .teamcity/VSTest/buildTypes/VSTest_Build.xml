@@ -45,7 +45,9 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="VSTest_ORybakRepo2" />
+      <vcs-entry-ref root-id="VSTest_ORybakRepo2">
+        <checkout-rule rule="**/* =&gt; some folder/" />
+      </vcs-entry-ref>
       <vcs-entry-ref root-id="VSTest_HttpsGithubComJuliaReshMyProjectGit" />
     </vcs-settings>
     <requirements />
