@@ -33,7 +33,7 @@
           <param name="dotNetCoverage.PartCover.includes" value="[*]*" />
           <param name="dotNetCoverage.PartCover.platformBitness" value="x86" />
           <param name="dotNetCoverage.PartCover.platformVersion" value="v2.0" />
-          <param name="dotNetTestRunner.Type" value="VSTest" />
+          <param name="dotNetTestRunner.Type" value="GenericProcess" />
           <param name="teamcity.step.mode" value="default" />
           <param name="vstest_file_names"><![CDATA[**/bin/debug/**/*.dll
 **/bin/debug/**/*.exe]]></param>
