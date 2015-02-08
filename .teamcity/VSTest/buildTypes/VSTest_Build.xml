@@ -35,6 +35,7 @@
           <param name="dotNetCoverage.PartCover.platformVersion" value="v2.0" />
           <param name="dotNetTestRunner.Type" value="GenericProcess" />
           <param name="teamcity.step.mode" value="default" />
+          <param name="vstest_cmd_line" value="/Logger:trx /Platform:x86 /testadapterpath:&quot;D:\TeamCity\9\32060\buildAgent\work\9045057796a1b4b4\some folder\AssemblyVersioning\bin\Debug\AssemblyVersioning.dll&quot;" />
           <param name="vstest_file_names"><![CDATA[**/bin/debug/**/*.dll
 **/bin/debug/**/*.exe]]></param>
           <param name="vstest_framework" value="default" />
