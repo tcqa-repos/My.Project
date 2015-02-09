@@ -8,6 +8,17 @@
     </options>
     <parameters />
     <build-runners>
+      <runner id="RUNNER_527" name="" type="jb.nuget.installer">
+        <parameters>
+          <param name="nuget.path" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+          <param name="nuget.updatePackages.mode" value="sln" />
+          <param name="nuget.use.restore" value="restore" />
+          <param name="nugetCustomPath" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+          <param name="nugetPathSelector" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+          <param name="sln.path" value="Samples.sln" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_523" name="" type="VS.Solution">
         <parameters>
           <param name="build-file-path" value="Samples.sln" />
@@ -44,17 +55,6 @@
           <param name="vstest_framework" value="default" />
           <param name="vstest_platform" value="x86" />
           <param name="vstest_version" value="%system.VSTest.12.0%" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_527" name="" type="jb.nuget.installer">
-        <parameters>
-          <param name="nuget.path" value="?NuGet.CommandLine.DEFAULT.nupkg" />
-          <param name="nuget.updatePackages.mode" value="sln" />
-          <param name="nuget.use.restore" value="restore" />
-          <param name="nugetCustomPath" value="?NuGet.CommandLine.DEFAULT.nupkg" />
-          <param name="nugetPathSelector" value="?NuGet.CommandLine.DEFAULT.nupkg" />
-          <param name="sln.path" value="Samples.sln" />
-          <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
     </build-runners>
