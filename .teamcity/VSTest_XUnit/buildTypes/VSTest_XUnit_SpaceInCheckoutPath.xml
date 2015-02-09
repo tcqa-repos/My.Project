@@ -13,9 +13,9 @@
           <param name="nuget.path" value="?NuGet.CommandLine.2.8.3.nupkg" />
           <param name="nuget.updatePackages.mode" value="sln" />
           <param name="nuget.use.restore" value="restore" />
-          <param name="nugetCustomPath" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+          <param name="nugetCustomPath" value="?NuGet.CommandLine.2.8.3.nupkg" />
           <param name="nugetPathSelector" value="?NuGet.CommandLine.2.8.3.nupkg" />
-          <param name="sln.path" value="Samples.sln" />
+          <param name="sln.path" value="folder with spaces/Samples.sln" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
