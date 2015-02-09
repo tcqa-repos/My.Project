@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="d45ea32a-1e84-4b9b-8f3f-31e9090b498c" type="jetbrains.git" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>xUnit</name>
+  <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
+  <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
+  <param name="authMethod" value="PASSWORD" />
+  <param name="branch" value="refs/heads/xUnit" />
+  <param name="ignoreKnownHosts" value="true" />
+  <param name="secure:password" value="zxxc062036e0d4db3bc775d03cbe80d301b" />
+  <param name="submoduleCheckout" value="CHECKOUT" />
+  <param name="url" value="https://github.com/JuliaResh/DotNetSamples.git" />
+  <param name="useAlternates" value="true" />
+  <param name="username" value="JuliaResh" />
+  <param name="usernameStyle" value="USERID" />
+</vcs-root>
+
