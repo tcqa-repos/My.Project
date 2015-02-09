@@ -59,7 +59,9 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="VSTest_XUnit_XUnit" />
+      <vcs-entry-ref root-id="VSTest_XUnit_XUnit">
+        <checkout-rule rule="=&gt; folder with spaces" />
+      </vcs-entry-ref>
     </vcs-settings>
     <requirements />
     <build-triggers />
