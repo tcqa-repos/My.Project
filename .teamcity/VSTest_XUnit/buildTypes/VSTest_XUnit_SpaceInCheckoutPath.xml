@@ -49,7 +49,7 @@
           <param name="dotNetCoverage.PartCover.platformVersion" value="v2.0" />
           <param name="dotNetTestRunner.Type" value="GenericProcess" />
           <param name="teamcity.step.mode" value="default" />
-          <param name="vstest_cmd_line" value="/testadapterpath:%teamcity.build.checkoutDir%\folder with spaces\packages\xunit.runner.visualstudio.2.0.0-rc2-build1040\build\_common" />
+          <param name="vstest_cmd_line" value="/testadapterpath:&quot;%teamcity.build.checkoutDir%\folder with spaces\packages\xunit.runner.visualstudio.2.0.0-rc2-build1040\build\_common&quot;" />
           <param name="vstest_detect_team_city_logger" value="true" />
           <param name="vstest_file_names"><![CDATA[**/bin/debug/**/*.dll
 **/bin/debug/**/*.exe]]></param>
