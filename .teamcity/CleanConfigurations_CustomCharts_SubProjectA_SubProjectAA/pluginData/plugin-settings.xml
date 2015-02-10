@@ -9,6 +9,11 @@
     <graph title="Should be SubProjectA" defaultFilters="" hideFilters="" seriesTitle="Serie">
       <valueType key="ArtifactsSize" title="Total Artifacts Size" sourceBuildTypeId="CleanConfigurations_CustomCharts_SubProjectA_SubProjectAA_BuildAA" />
     </graph>
+    <graph title="Test Chart" defaultFilters="" hideFilters="" seriesTitle="Serie" format="percentBy1">
+      <valueType key="BuildDurationNetTime" title="Build Duration (excluding Checkout Time)" sourceBuildTypeId="CleanConfigurations_CustomCharts_SubProjectA_SubProjectAA_BuildAA" />
+      <valueType key="buildStageDuration:artifactsPublishing" title="buildStageDuration:artifactsPublishing" sourceBuildTypeId="CleanConfigurations_CustomCharts_SubProjectA_SubProjectAA_BuildAA" />
+      <valueType key="buildStageDuration:buildFinishing" title="buildStageDuration:buildFinishing" sourceBuildTypeId="CleanConfigurations_CustomCharts_SubProjectA_SubProjectAA_BuildAA" />
+    </graph>
   </project-graphs>
 </settings>
 
