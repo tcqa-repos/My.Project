@@ -14,6 +14,12 @@
       <valueType key="BuildTestStatus" title="BuildTestStatus" />
       <valueType key="MyAwesomeKey42" title="MyAwesomeKey42" />
     </graph>
+    <graph title="Chart title 1qazxsw2" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueType key="BuildDuration" title="Build Duration (all stages)" />
+      <valueType key="BuildDurationNetTime" title="Build Duration (excluding Checkout Time)" />
+      <valueType key="buildStageDuration:artifactsPublishing" title="buildStageDuration:artifactsPublishing" />
+      <valueType key="buildStageDuration:buildFinishing" title="buildStageDuration:buildFinishing" />
+    </graph>
   </buildtype-graphs>
   <project-graphs>
     <graph title="New chart title" defaultFilters="" hideFilters="" seriesTitle="Serie">
