@@ -43,6 +43,10 @@
     <graph title="Test Chart" defaultFilters="" hideFilters="" seriesTitle="Serie">
       <valueType key="MyNewAwesomeKey42" title="MyNewAwesomeKey42" sourceBuildTypeId="CleanConfigurations_CustomCharts_ReportCustomStatistics_3" />
     </graph>
+    <graph title="Test Chart" defaultFilters="" hideFilters="" seriesTitle="Seriefgh">
+      <valueType key="BuildDuration" title="Build Duration (all stages)" sourceBuildTypeId="CleanConfigurations_CustomCharts_SubProjectA_SubProjectAA_BuildAA" />
+      <valueType key="BuildDurationNetTime" title="Build Duration (excluding Checkout Time)" sourceBuildTypeId="CleanConfigurations_CustomCharts_SubProjectA_SubProjectAA_BuildAA" />
+    </graph>
   </project-graphs>
 </settings>
 
