@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<settings />
+<settings>
+  <project-graphs>
+    <graph title="Should be SubProjectA" defaultFilters="" hideFilters="" seriesTitle="Serie">
+      <valueType key="ArtifactsSize" title="Total Artifacts Size" sourceBuildTypeId="CleanConfigurations_CustomCharts_SubProjectA_SubProjectAA_BuildAA" />
+    </graph>
+  </project-graphs>
+</settings>
 
