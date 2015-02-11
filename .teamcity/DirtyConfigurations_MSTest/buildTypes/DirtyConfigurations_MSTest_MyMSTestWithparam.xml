@@ -7,8 +7,8 @@
       <option name="artifactRules" value="**\* =&gt;" />
     </options>
     <parameters>
-      <param name="assemblies" value="%sol_dir%\BankTests\bin\Debug\BankTests.dll " />
-      <param name="sol_dir" value="folder" />
+      <param name="assemblies" value="%sol_dir%\BankTests\bin\Debug\BankTests.dll" />
+      <param name="sol_dir" value="folder  " />
     </parameters>
     <build-runners>
       <runner id="RUNNER_525" name="" type="VS.Solution">
