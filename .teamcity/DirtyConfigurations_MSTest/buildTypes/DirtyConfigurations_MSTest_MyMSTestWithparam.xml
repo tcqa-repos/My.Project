@@ -42,8 +42,8 @@
           <param name="dotNetCoverage.PartCover.platformBitness" value="x86" />
           <param name="dotNetCoverage.PartCover.platformVersion" value="v2.0" />
           <param name="dotNetTestRunner.Type" value="MSTest" />
-          <param name="mstest_assemblies_list"><![CDATA[%assemblies%
-%BankTests%
+          <param name="mstest_assemblies_list"><![CDATA[%assemblies% 
+%BankTests% 
 %MoreBankTests%]]></param>
           <param name="mstest_enable" value="checked" />
           <param name="mstest_path" value="%system.MSTest.12.0%" />
