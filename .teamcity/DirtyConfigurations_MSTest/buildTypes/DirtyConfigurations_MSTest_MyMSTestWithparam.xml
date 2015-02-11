@@ -6,7 +6,9 @@
     <options>
       <option name="artifactRules" value="**\* =&gt;" />
     </options>
-    <parameters />
+    <parameters>
+      <param name="assemblies" value="BankTests\bin\Debug\BankTests.dll" />
+    </parameters>
     <build-runners>
       <runner id="RUNNER_525" name="" type="VS.Solution">
         <parameters>
