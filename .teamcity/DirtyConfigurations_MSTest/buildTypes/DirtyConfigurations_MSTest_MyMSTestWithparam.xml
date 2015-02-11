@@ -9,6 +9,7 @@
     <parameters>
       <param name="assemblies" value="%sol_dir%\BankTests\bin\Debug\BankTests.dll   " />
       <param name="BankTests" value="%sol_dir%\BankTests\bin\Debug\BankTests.dll   " />
+      <param name="MoreBankTests" value="%sol_dir%\BankTests\bin\Debug\BankTests.dll   " />
       <param name="sol_dir" value="folder  " />
     </parameters>
     <build-runners>
