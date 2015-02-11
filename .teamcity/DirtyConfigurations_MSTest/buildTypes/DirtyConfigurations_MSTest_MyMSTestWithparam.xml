@@ -40,7 +40,7 @@
           <param name="dotNetCoverage.PartCover.platformBitness" value="x86" />
           <param name="dotNetCoverage.PartCover.platformVersion" value="v2.0" />
           <param name="dotNetTestRunner.Type" value="MSTest" />
-          <param name="mstest_assemblies_list" value="%assemblies%" />
+          <param name="mstest_assemblies_list" value="BankTests\bin\Debug\BankTests.dll" />
           <param name="mstest_enable" value="checked" />
           <param name="mstest_path" value="%system.MSTest.12.0%" />
           <param name="teamcity.step.mode" value="default" />
@@ -49,7 +49,7 @@
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DirtyConfigurations_MSTest_HttpsUnit5397443svnMSTestMSTest">
-        <checkout-rule rule="+:MyMSTest/MSTest =&gt; ." />
+        <checkout-rule rule="+:MyMSTest/MSTest =&gt; folder" />
       </vcs-entry-ref>
     </vcs-settings>
     <requirements />
