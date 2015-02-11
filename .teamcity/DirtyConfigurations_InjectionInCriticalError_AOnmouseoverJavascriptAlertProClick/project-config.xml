@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="DirtyConfigurations_InjectionInCriticalError" uuid="764f8e7a-e319-4121-8f03-809175d6d18b" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>&lt;a onmouseover="javascript:alert(pro)"&gt;click&lt;/a&gt;'"&lt;script&gt;alert(pro);&lt;/script&gt;</name>
+  <parameters />
+  <cleanup />
+</project>
+
