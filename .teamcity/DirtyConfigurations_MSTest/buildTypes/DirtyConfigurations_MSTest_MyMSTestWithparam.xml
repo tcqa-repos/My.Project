@@ -7,7 +7,7 @@
       <option name="artifactRules" value="**\* =&gt;" />
     </options>
     <parameters>
-      <param name="assemblies" value="BankTests\bin\Debug\BankTests.dll" />
+      <param name="assemblies" value="%sol_dir%\BankTests\bin\Debug\BankTests.dll" />
       <param name="sol_dir" value="folder" />
     </parameters>
     <build-runners>
