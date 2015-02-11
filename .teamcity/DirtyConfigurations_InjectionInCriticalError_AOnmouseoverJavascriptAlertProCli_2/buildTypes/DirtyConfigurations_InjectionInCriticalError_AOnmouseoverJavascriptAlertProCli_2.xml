@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="247f6616-87c3-4cb9-b592-639a93ba0729" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>&lt;a onmouseover="javascript:alert(bc)"&gt;click&lt;/a&gt;'"&lt;script&gt;alert(bc);&lt;/script&gt;</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners />
+    <vcs-settings>
+      <vcs-entry-ref root-id="DirtyConfigurations_InjectionInCriticalError_AOnmouseoverJavascriptAlertProCli_2" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+
