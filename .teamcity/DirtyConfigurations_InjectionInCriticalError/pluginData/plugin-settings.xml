@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<settings />
+<settings>
+  <report-tabs>
+    <report-tab title="Some Report Tab" buildTypeId="DirtyConfigurations_InjectionInCriticalError_AOnmouseoverJavascriptAlertProCli_2">
+      <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
+    </report-tab>
+  </report-tabs>
+</settings>
 
