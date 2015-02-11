@@ -49,7 +49,7 @@
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DirtyConfigurations_MSTest_HttpsUnit5397443svnMSTestMSTest">
-        <checkout-rule rule="+:MyMSTest/MSTest =&gt; ." />
+        <checkout-rule rule="+:MyMSTest/MSTest =&gt; folder" />
       </vcs-entry-ref>
     </vcs-settings>
     <requirements />
