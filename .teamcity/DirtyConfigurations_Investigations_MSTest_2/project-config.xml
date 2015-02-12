@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="DirtyConfigurations_Investigations" uuid="2b7122d5-360a-4c10-a4c1-a3a7aa690d52" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>MSTest (1)</name>
+  <parameters />
+  <cleanup />
+</project>
+
