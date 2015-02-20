@@ -72,7 +72,7 @@
     </build-runners>
     <vcs-settings />
     <requirements>
-      <matches name="teamcity.agent.name" value="7|64" />
+      <contains name="teamcity.agent.jvm.os.name" value="Windows 7" />
     </requirements>
     <build-triggers />
     <build-extensions>
