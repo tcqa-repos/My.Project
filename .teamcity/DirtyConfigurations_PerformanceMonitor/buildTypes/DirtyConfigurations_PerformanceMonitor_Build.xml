@@ -21,6 +21,22 @@
           <param name="use-custom-build-file" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_548" name="New build step" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<project name="Sleep" default="sleep" >
+   <target name="sleep">
+      <sleep seconds="7"/>
+   </target>
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings />
     <requirements />
