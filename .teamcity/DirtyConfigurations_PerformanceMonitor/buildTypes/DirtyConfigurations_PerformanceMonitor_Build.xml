@@ -5,12 +5,20 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_545" name="" type="simpleRunner">
+      <runner id="RUNNER_545" name="" type="Ant">
         <parameters>
-          <param name="script.content"><![CDATA[ping 1.1.1.1
-exit 0]]></param>
+          <param name="build-file"><![CDATA[<project name="Sleep" default="sleep" >
+   <target name="sleep">
+      <sleep seconds="7"/>
+   </target>
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
           <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
+          <param name="use-custom-build-file" value="true" />
         </parameters>
       </runner>
       <runner id="RUNNER_546" name="New build step" type="simpleRunner">
