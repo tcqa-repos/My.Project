@@ -21,14 +21,6 @@
           <param name="use-custom-build-file" value="true" />
         </parameters>
       </runner>
-      <runner id="RUNNER_547" name="New build step (1)" type="simpleRunner">
-        <parameters>
-          <param name="script.content"><![CDATA[ping 1.1.1.1
-exit 0]]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
     </build-runners>
     <vcs-settings />
     <requirements />
