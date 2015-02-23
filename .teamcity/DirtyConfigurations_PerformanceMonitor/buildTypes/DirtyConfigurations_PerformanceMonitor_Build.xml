@@ -71,9 +71,7 @@
       </runner>
     </build-runners>
     <vcs-settings />
-    <requirements>
-      <contains name="teamcity.agent.jvm.os.name" value="Windows 7" />
-    </requirements>
+    <requirements />
     <build-triggers />
     <build-extensions>
       <extension id="perfmon" type="perfmon">
