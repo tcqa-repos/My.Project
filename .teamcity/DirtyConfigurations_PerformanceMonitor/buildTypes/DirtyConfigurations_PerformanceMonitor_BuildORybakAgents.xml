@@ -4,7 +4,7 @@
   <description />
   <settings>
     <parameters>
-      <param name="seconds" value="" />
+      <param name="seconds" value="120" />
     </parameters>
     <build-runners>
       <runner id="RUNNER_553" name="" type="Ant">
