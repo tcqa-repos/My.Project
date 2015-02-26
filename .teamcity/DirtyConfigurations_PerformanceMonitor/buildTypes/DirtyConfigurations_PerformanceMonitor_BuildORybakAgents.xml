@@ -27,7 +27,7 @@
         <parameters>
           <param name="build-file"><![CDATA[<project name="Sleep" default="sleep" >
    <target name="sleep">
-      <sleep seconds="7"/>
+      <sleep seconds="120"/>
    </target>
 </project>]]></param>
           <param name="build-file-path" value="build.xml" />
