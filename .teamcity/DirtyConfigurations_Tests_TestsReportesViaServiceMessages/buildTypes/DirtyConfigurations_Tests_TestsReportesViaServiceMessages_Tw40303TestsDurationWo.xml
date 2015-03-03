@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="63898fe6-d4b8-46e7-953c-ee48084f5ce1" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
-  <name>TW-40303 Tests duration work incorrecrtly</name>
-  <description />
+  <name>3 reported tests</name>
+  <description>TW-40303 Tests duration work incorrecrtly</description>
   <settings>
     <parameters />
     <build-runners>
