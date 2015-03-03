@@ -13,6 +13,6 @@
       <param name="name" value="JB YouTrack" />
     </trackerConnection>
   </issueTrackers>
-  <versionedSettings rootId="MyProject" enabled="true" showChanges="true" />
+  <versionedSettings rootId="MyProject" enabled="true" showChanges="false" />
 </settings>
 
