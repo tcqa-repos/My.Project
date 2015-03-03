@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="DirtyConfigurations_Tests" uuid="c889e5de-b2e2-4261-b0cb-f9deb9513fc9" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
-  <name>Tests reportes via service messages</name>
+  <name>Tests reported via service messages</name>
   <parameters />
   <cleanup />
 </project>
