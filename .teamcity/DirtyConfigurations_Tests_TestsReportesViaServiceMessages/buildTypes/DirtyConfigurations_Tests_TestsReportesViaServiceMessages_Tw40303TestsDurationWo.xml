@@ -10,7 +10,7 @@
           <param name="script.content"><![CDATA[echo ##teamcity[testStarted flowId='YTest2' name='AAntispamTools.Deduce_Fast.DeduceAllWsX' captureStandardOutput='false']
 echo ##teamcity[testFinished flowId='YTest2' name='AAntispamTools.Deduce_Fast.DeduceAllWsX' duration='138.135507']
 echo ##teamcity[testStarted flowId='YTest2' name='AAntispamTools.Deduce_Fast.DeduceAllWsX2' captureStandardOutput='false']
-echo ##teamcity[testFinished flowId='YTes2t' name='AAntispamTools.Deduce_Fast.DeduceAllWsX2' duration='128.1355079']
+echo ##teamcity[testFinished flowId='YTest2' name='AAntispamTools.Deduce_Fast.DeduceAllWsX2' duration='128.1355079']
 echo ##teamcity[testStarted flowId='YTest2' name='AAntispamTools.Deduce_Fast.DeduceAllWsX3' captureStandardOutput='false']
 echo ##teamcity[testFinished flowId='YTest2' name='AAntispamTools.Deduce_Fast.DeduceAllWsX3' duration='148.13550']]]></param>
           <param name="teamcity.step.mode" value="default" />
