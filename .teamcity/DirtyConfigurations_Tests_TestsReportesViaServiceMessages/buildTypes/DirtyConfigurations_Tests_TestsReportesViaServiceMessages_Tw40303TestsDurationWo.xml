@@ -8,7 +8,11 @@
       <runner id="RUNNER_557" name="" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[echo ##teamcity[testStarted flowId='YTest' name='AntispamTools.Deduce_Fast.DeduceAllWsX' captureStandardOutput='false']
-echo ##teamcity[testFinished flowId='YTest' name='AntispamTools.Deduce_Fast.DeduceAllWsX' duration='158.135507']]]></param>
+echo ##teamcity[testFinished flowId='YTest' name='AntispamTools.Deduce_Fast.DeduceAllWsX' duration='158.135507']
+echo ##teamcity[testStarted flowId='YTest' name='AntispamTools.Deduce_Fast.DeduceAllWsX2' captureStandardOutput='false']
+echo ##teamcity[testFinished flowId='YTest' name='AntispamTools.Deduce_Fast.DeduceAllWsX2' duration='158.1355079']
+echo ##teamcity[testStarted flowId='YTest' name='AntispamTools.Deduce_Fast.DeduceAllWsX3' captureStandardOutput='false']
+echo ##teamcity[testFinished flowId='YTest' name='AntispamTools.Deduce_Fast.DeduceAllWsX3' duration='158.13550']]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
