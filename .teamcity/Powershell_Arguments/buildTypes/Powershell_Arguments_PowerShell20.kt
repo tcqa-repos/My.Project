@@ -22,6 +22,7 @@ object Powershell_Arguments_PowerShell20 : BuildType({
         }
     }
 
+                  
     requirements {
         equals("powershell_x86", "2.0", "RQ_28")
     }
