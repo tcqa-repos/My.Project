@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="3824bda7-5ec0-419c-8086-a32764b7f07d" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/2017.2/project-config.xsd">
   <name>VS</name>
-  <parameters />
+  <parameters>
+    <param name="aaa" value="aaaa" />
+  </parameters>
   <project-extensions>
     <extension id="PROJECT_EXT_3" type="versionedSettings">
       <parameters>
